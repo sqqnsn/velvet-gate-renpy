@@ -1,0 +1,17 @@
+# Ren'Py generated artifacts
+*.rpyc
+*.rpymc
+*.rpa
+*.log
+game/cache/
+game/saves/
+game/traceback.txt
+game/errors.txt
+game/python-packages/__pycache__/
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
