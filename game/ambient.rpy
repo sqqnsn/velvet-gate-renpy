@@ -146,10 +146,10 @@ init python:
     }
 
     def vg_ambient_touch(key, location, day_number):
-        store.vg_affinity[key] += 1
+        renpy.store.vg_affinity[key] += 1
         memory = "ambient_%s_day_%s" % (location, day_number)
-        if memory not in store.vg_memories[key]:
-            store.vg_memories[key].append(memory)
+        if memory not in renpy.store.vg_memories[key]:
+            renpy.store.vg_memories[key].append(memory)
 
 label vg_casual_menu:
     "The morning offers a chance to share an easy conversation before choosing how to spend the afternoon."

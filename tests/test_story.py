@@ -44,6 +44,7 @@ def create_namespace():
         vg_intent={key: False for key in order},
         vg_mutual={key: False for key in order},
     )
+    namespace["renpy"] = types.SimpleNamespace(store=namespace["store"])
     return namespace
 
 

@@ -608,16 +608,16 @@ init python:
 
     def vg_record_focus(key, visits_so_far, choice_index, chapter):
         """Store changes in Ren'Py default-backed variables for save/rollback."""
-        store.vg_affinity[key] += 2 if choice_index == 0 else 1
+        renpy.store.vg_affinity[key] += 2 if choice_index == 0 else 1
         chosen_memory = chapter["choices"][choice_index]["memory"]
-        if chosen_memory and chosen_memory not in store.vg_memories[key]:
-            store.vg_memories[key].append(chosen_memory)
+        if chosen_memory and chosen_memory not in renpy.store.vg_memories[key]:
+            renpy.store.vg_memories[key].append(chosen_memory)
         if choice_index == 0 and visits_so_far >= 3:
-            if not store.vg_intent[key]:
-                store.vg_intent[key] = True
+            if not renpy.store.vg_intent[key]:
+                renpy.store.vg_intent[key] = True
             elif visits_so_far >= 4:
-                store.vg_mutual[key] = True
-        store.vg_visits[key] += 1
+                renpy.store.vg_mutual[key] = True
+        renpy.store.vg_visits[key] += 1
 
     def vg_is_complete(key, visits, memories, intent, mutual):
         """A successful romance needs time, sincerity, and reciprocal choice."""
