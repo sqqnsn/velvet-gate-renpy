@@ -4,7 +4,19 @@ A **private, canon-first** development repository for a relaxed seven-day villa-
 
 ## Current status
 
-**Character Bible v0.1 is drafted for review.** The playable Ren'Py game has **not yet been built in this repository**. An earlier four-route ZIP prototype exists separately and is intentionally **not** treated as the final story direction.
+**Seven Lanterns demo v0.2 source is in `game/`.** All fourteen women can be pursued during a seven-day week. Every woman has five distinct courtship chapters, two follow-up afternoons, and a personal ending, alongside twenty-eight day-specific casual group scenes. The character bible remains a reference, not a set of retroactive story changes.
+
+The writing and Python logic have static tests. **Ren'Py SDK lint and an actual interactive playthrough remain to be done**; the SDK was not available in the development environment.
+
+## Run the demo in Ren'Py
+
+1. Install the current [Ren'Py SDK](https://www.renpy.org/latest.html) on your computer and open its Launcher.
+2. Create a new Ren'Py project (for example `VelvetGateSevenLanterns`) with a standard GUI theme.
+3. In that new project's `game/` folder, **replace** the generated `script.rpy` with the one from this repository, and copy over `routes.rpy` and `ambient.rpy`. Retain the generated `screens.rpy`, `gui.rpy`, `options.rpy`, and standard GUI assets.
+4. Launch the project. The demo uses solid-color backgrounds and text; no external art, audio, or plugins are required.
+5. In the Launcher, select **Check Script (Lint)** before treating the game as ready to share.
+
+Use the repository's **Code → Download ZIP** option if you haven't cloned it locally. Avoid installing the old four-character prototype over this version.
 
 ## Start reading
 
@@ -14,17 +26,26 @@ A **private, canon-first** development repository for a relaxed seven-day villa-
 4. [Character profiles](canon/characters/) — voice, behavior, visual anchors, things to avoid, and open questions.
 5. [Agent instructions](AGENTS.md) — how future coding/writing work should use the references.
 
-## Build direction
+## Game structure
 
-- Seven days with morning, afternoon, and evening time slots.
-- Locations and small choices; social and domestic scenes instead of an overarching mystery.
-- All fourteen women appear and have distinct conversations and interactions; relationships among the women continue independently of Domine's choices.
-- The story introduces lore through play; new players need no prior Velvet Gate knowledge.
-- Dialogue samples in the bible are *proposals*, not retroactively established canon.
+- One optional **casual group conversation** per morning, then one **dedicated afternoon** with any of the fourteen women, followed by a brief evening beat.
+- One hidden numeric relationship value per woman: **Affinity**. Visits, romantic intent, reciprocity, and remembered moments are *story conditions*, not extra meters.
+- Five substantial personal visits, including sincere interest and reciprocation, can secure a complete romance. Seven days cannot complete two romances. Sixth and seventh visits have new scenes instead of repeating the fifth.
+- A warm but incomplete path resolves toward the strongest relationship if the player spreads attention, with a player choice if leads tie.
+- Decisions and individual memories alter the tone and details of the closing scene. The interface never exposes affinity numbers.
+- Private, members-only villa life; no financial-crisis plot or outsiders entering the estate.
 
-## Future structure
+See [demo mechanics](DESIGN_NOTES.md) for branching rules and test coverage.
 
-Once the references are approved, introduce a Ren'Py `game/` source tree and installable/testable project instructions. Keep reference Markdown outside `game/` so it isn't mistaken for a runtime asset.
+## Tests
+
+In a checkout with Python 3 available:
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+The tests validate story-data syntax, route coverage, all fourteen complete endings, ambient scenes, tie selection, and milestone logic. They cannot validate Ren'Py script syntax or screen rendering; run the SDK's lint and play the full seven days for that.
 
 ## Sources
 

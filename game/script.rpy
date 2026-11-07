@@ -1,0 +1,311 @@
+# Velvet Gate: Seven Lanterns
+# A standalone, text-first, seven-day Ren'Py game.
+# Continuity follows ../canon/; scenes written here are game-only interpretations.
+
+define config.name = _("Velvet Gate: Seven Lanterns")
+define config.version = "0.2.0-demo"
+
+define vg_livia = Character("Livia", color="#c9b7ee")
+define vg_claire = Character("Claire", color="#e4c4a3")
+define vg_maddie = Character("Maddie", color="#efb5cf")
+define vg_sydney = Character("Sydney", color="#9cc9de")
+define vg_domitia = Character("Domitia", color="#e3ca9c")
+define vg_ione = Character("Ione", color="#dddce9")
+define vg_saba = Character("Saba", color="#d9b27b")
+define vg_yara = Character("Yara", color="#b3d3bd")
+define vg_sylvie = Character("Sylvie", color="#baacd2")
+define vg_nisha = Character("Nisha", color="#e6b49a")
+define vg_valeria = Character("Valeria", color="#e6a4ad")
+define vg_mina = Character("Mina", color="#badcde")
+define vg_samira = Character("Samira", color="#c4bacb")
+define vg_safiya = Character("Safiya", color="#bfcca7")
+
+define vg_speakers = {
+    "livia": vg_livia, "claire": vg_claire, "maddie": vg_maddie,
+    "sydney": vg_sydney, "domitia": vg_domitia, "ione": vg_ione,
+    "saba": vg_saba, "yara": vg_yara, "sylvie": vg_sylvie,
+    "nisha": vg_nisha, "valeria": vg_valeria, "mina": vg_mina,
+    "samira": vg_samira, "safiya": vg_safiya,
+}
+
+# No art assets are required for this test build; these are atmospheric placeholders.
+image vg atrium = Solid("#231c28")
+image vg study = Solid("#2c2533")
+image vg terrace = Solid("#302529")
+image vg garden = Solid("#19312d")
+image vg library = Solid("#26283b")
+image vg music = Solid("#322637")
+image vg evening = Solid("#141c2b")
+
+# Only affinity is a numeric relationship metric. All other values record story facts.
+default vg_day = 1
+default vg_affinity = {key: 0 for key in VG_ORDER}
+default vg_visits = {key: 0 for key in VG_ORDER}
+default vg_memories = {key: [] for key in VG_ORDER}
+default vg_intent = {key: False for key in VG_ORDER}
+default vg_mutual = {key: False for key in VG_ORDER}
+default vg_current_key = "livia"
+default vg_speaker = vg_livia
+default vg_encounter = {}
+default vg_opening = ""
+default vg_visit_number = 0
+default vg_first_option = ""
+default vg_second_option = ""
+default vg_choice_number = 0
+default vg_line = ""
+default vg_reply = ""
+default vg_finalists = []
+default vg_ending_data = {}
+default vg_ending_line = ""
+
+screen vg_day_marker():
+    zorder 80
+    frame:
+        xalign 0.02
+        yalign 0.025
+        background Solid("#11101bdb")
+        padding (16, 11)
+        vbox:
+            spacing 2
+            text "VELVET GATE" color "#ead5ad" bold True size 20
+            text "Day [vg_day] of 7" color "#e2d8e9" size 16
+
+screen vg_finalist_picker(keys):
+    modal True
+    zorder 100
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 650
+        background Solid("#221b31f6")
+        padding (30, 26)
+        vbox:
+            spacing 12
+            text "Several connections remain equally close. Whose company do you seek tonight?" color "#f4dfbc" size 23
+            for key in keys:
+                textbutton VG_NAMES[key] action Return(key)
+
+label start:
+    scene vg atrium
+    with fade
+    show screen vg_day_marker
+
+    "VELVET GATE — SEVEN LANTERNS"
+    "Beyond the garden walls, the world continues. Inside this private House, the week promises no grand crisis—only ordinary days and the women who give them shape."
+    "You are Domine, master of Velvet Gate. All fourteen women belong to its life, though no one's heart is a privilege to be commanded."
+    vg_livia "You have seven afternoons free of urgent business, Domine. I took the liberty of preserving them."
+    vg_claire "The Lower House will continue its ordinary work. Nothing requires a performance in your honor, darling."
+    vg_livia "You might spend them in company. Some of us would welcome being known beyond our duties."
+    "You can share a casual morning with the House each day, then give one person your undivided afternoon. Seven days leave time for one close courtship, should it be returned."
+    jump vg_day_loop
+
+label vg_day_loop:
+    if vg_day > 7:
+        jump vg_finale
+    call vg_morning
+    call vg_casual_menu
+    jump vg_focus_menu
+
+label vg_morning:
+    scene vg atrium
+    with dissolve
+    if vg_day == 1:
+        "DAY ONE — The unhurried table"
+        "Morning bread passes from hand to hand. Claire checks the seating; Livia merely watches you notice who is already laughing."
+    elif vg_day == 2:
+        "DAY TWO — Familiar company"
+        vg_maddie "I said I'd be ready early. Sydney says my version of early is decorative."
+        vg_sydney "I said it with affection. Mostly."
+    elif vg_day == 3:
+        "DAY THREE — Things worth repeating"
+        vg_yara "Nisha has suggested music with breakfast. I suggested we first survive breakfast."
+        vg_nisha "You could have said yes and saved us both time."
+    elif vg_day == 4:
+        "DAY FOUR — A spell of rain"
+        "Rain closes the garden paths for an hour. The covered walks, however, belong to anyone willing to linger."
+    elif vg_day == 5:
+        "DAY FIVE — A gentler rhythm"
+        vg_claire "The rooms are in order, and for once nobody is in a hurry. I almost distrust it."
+        vg_livia "Enjoy it before it becomes another duty."
+    elif vg_day == 6:
+        "DAY SIX — What you remember"
+        "A shared joke, a withheld confidence, a hand not quite withdrawn: the small events of the week have begun to accumulate."
+    else:
+        "DAY SEVEN — The final lantern"
+        "Tonight the House will take supper under seven lamps. There are no guests; this gathering belongs to its members alone."
+        vg_livia "Do not spend your final afternoon choosing what ought to impress us. Choose whom you wish to understand."
+    return
+
+label vg_focus_menu:
+    scene vg atrium
+    with dissolve
+    "The afternoon is yours. Where will you spend it?"
+    menu:
+        "The Keeper's study — Livia, Claire":
+            jump vg_pick_study
+        "The terrace — Saba, Yara, Domitia, Valeria":
+            jump vg_pick_terrace
+        "The garden — Maddie, Sydney, Sylvie":
+            jump vg_pick_garden
+        "The library — Ione, Samira, Safiya":
+            jump vg_pick_library
+        "The music room — Nisha, Mina":
+            jump vg_pick_music
+
+label vg_pick_study:
+    menu:
+        "Livia — ask the Keeper to set her work aside":
+            $ vg_current_key = "livia"
+        "Claire — join the provisional Mistress of the Lower House":
+            $ vg_current_key = "claire"
+        "Look elsewhere":
+            jump vg_focus_menu
+    jump vg_focus_scene
+
+label vg_pick_terrace:
+    menu:
+        "Saba — the shaded colonnade":
+            $ vg_current_key = "saba"
+        "Yara — the table overlooking the garden":
+            $ vg_current_key = "yara"
+        "Domitia — the sunlit gallery":
+            $ vg_current_key = "domitia"
+        "Valeria — the worktable of folded linens":
+            $ vg_current_key = "valeria"
+        "Look elsewhere":
+            jump vg_focus_menu
+    jump vg_focus_scene
+
+label vg_pick_garden:
+    menu:
+        "Maddie — the flower beds":
+            $ vg_current_key = "maddie"
+        "Sydney — the blue-tiled bench":
+            $ vg_current_key = "sydney"
+        "Sylvie — the quiet arbor":
+            $ vg_current_key = "sylvie"
+        "Look elsewhere":
+            jump vg_focus_menu
+    jump vg_focus_scene
+
+label vg_pick_library:
+    menu:
+        "Ione — the window seat":
+            $ vg_current_key = "ione"
+        "Samira — the reading alcove":
+            $ vg_current_key = "samira"
+        "Safiya — the copyist's table":
+            $ vg_current_key = "safiya"
+        "Look elsewhere":
+            jump vg_focus_menu
+    jump vg_focus_scene
+
+label vg_pick_music:
+    menu:
+        "Nisha — the rehearsal floor":
+            $ vg_current_key = "nisha"
+        "Mina — the music shelves":
+            $ vg_current_key = "mina"
+        "Look elsewhere":
+            jump vg_focus_menu
+    jump vg_focus_scene
+
+label vg_focus_scene:
+    $ vg_visit_number = vg_visits[vg_current_key]
+    $ vg_encounter = vg_get_chapter(vg_current_key, vg_visit_number)
+    $ vg_opening = vg_encounter["opening"]
+    $ vg_speaker = vg_speakers[vg_current_key]
+    $ vg_line = vg_encounter["line"]
+    $ vg_first_option = vg_encounter["choices"][0]["text"]
+    $ vg_second_option = vg_encounter["choices"][1]["text"]
+
+    if vg_current_key in ("livia", "claire"):
+        scene vg study
+    elif vg_current_key in ("saba", "yara", "domitia", "valeria"):
+        scene vg terrace
+    elif vg_current_key in ("maddie", "sydney", "sylvie"):
+        scene vg garden
+    elif vg_current_key in ("ione", "samira", "safiya"):
+        scene vg library
+    else:
+        scene vg music
+    with dissolve
+
+    "[vg_opening]"
+    vg_speaker "[vg_line]"
+    menu:
+        "[vg_first_option]":
+            $ vg_choice_number = 0
+        "[vg_second_option]":
+            $ vg_choice_number = 1
+    $ vg_reply = vg_encounter["choices"][vg_choice_number]["reply"]
+    vg_speaker "[vg_reply]"
+    $ vg_record_focus(vg_current_key, vg_visit_number, vg_choice_number, vg_encounter)
+
+    if vg_mutual[vg_current_key] and vg_choice_number == 0:
+        "For a moment, the conversation rests in a quiet understanding neither of you needs to announce."
+    elif vg_choice_number == 0:
+        "You leave with a particular moment to remember."
+    else:
+        "The afternoon passes pleasantly. Some things remain for another day."
+    jump vg_end_day
+
+label vg_end_day:
+    scene vg evening
+    with dissolve
+    if vg_day == 3:
+        vg_livia "I hope you are finding more than agreeable conversation, Domine. Agreement is the simplest thing to offer a master."
+    elif vg_day == 6:
+        vg_claire "Tomorrow is the last evening of this little reprieve. If there is something you mean to say, do not let etiquette say it for you."
+    elif vg_day == 7:
+        "At sunset, the seven lamps are placed along the courtyard. The women gather in their own small knots of conversation."
+    else:
+        "At dusk, the House settles into familiar sounds: sandals on stone, conversation in distant rooms, water in the garden."
+    $ vg_day += 1
+    jump vg_day_loop
+
+label vg_finale:
+    hide screen vg_day_marker
+    scene vg evening
+    with fade
+    "The seventh lantern burns low. Supper is over; a last stretch of the evening remains unclaimed."
+    $ vg_finalists = vg_best_connections(vg_affinity, vg_visits, vg_memories)
+    if not vg_finalists:
+        vg_livia "A quiet week is not a wasted one, Domine. The House will still be here in the morning."
+        "You leave the courtyard with the pleasant certainty that there are many people here you have yet to know."
+        jump vg_credits
+    if len(vg_finalists) > 1:
+        "More than one connection holds the same place in your thoughts. The last choice belongs to you."
+        call screen vg_finalist_picker(vg_finalists)
+        $ vg_current_key = _return
+    else:
+        $ vg_current_key = vg_finalists[0]
+
+    $ vg_speaker = vg_speakers[vg_current_key]
+    $ vg_ending_data = VG_ENDINGS[vg_current_key]
+    if vg_is_complete(vg_current_key, vg_visits, vg_memories, vg_intent, vg_mutual):
+        $ vg_ending_line = vg_ending_data["complete"]
+        "[vg_ending_line]"
+        $ vg_line = vg_ending_data["complete_speech"]
+        vg_speaker "[vg_line]"
+        "The promise is mutual. This week closes one chapter, but not the bond you have chosen to begin."
+    else:
+        $ vg_ending_line = vg_ending_data["incomplete"]
+        "[vg_ending_line]"
+        $ vg_line = vg_ending_data["incomplete_speech"]
+        vg_speaker "[vg_line]"
+        "There is warmth here, perhaps the beginning of something. Seven days cannot tell the whole story."
+
+    if vg_ending_data["memory"] in vg_memories[vg_current_key]:
+        $ vg_ending_line = vg_ending_data["recall"]
+        "[vg_ending_line]"
+    elif vg_ending_data["alternate_memory"] in vg_memories[vg_current_key]:
+        $ vg_ending_line = vg_ending_data["alternate_recall"]
+        "[vg_ending_line]"
+    jump vg_credits
+
+label vg_credits:
+    "VELVET GATE — SEVEN LANTERNS"
+    "An end to this week. Not an end to the House."
+    "Replay to discover another woman's story, or choose differently to see a different kind of farewell."
+    return
