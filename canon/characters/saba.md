@@ -1,6 +1,6 @@
 # Saba al-Nur — First Witness
 
-**Status:** Current working canon. **Rank:** Tier 1, First Cohort. **Witness to:** Safiya al-Nur.
+**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 in the expanded estate and Tier 1 in *Seven Lanterns*. **Witness to:** Safiya al-Nur.
 
 **Primary source:** [Saba character page](https://app.notion.com/p/3ab982beff5c81f6a8dde1edf84e6d8a).
 

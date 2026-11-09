@@ -4,6 +4,8 @@
 
 This **game-only** continuity is a seven-day, low-pressure introduction to Velvet Gate. The player is Domine, with Livia as Keeper and Claire as provisional Lower House Mistress. The six Tier-1 Witnesses and six Tier-0 Second Cohort women preserve their roles; no permanent promotion is made by a romantic ending. Only House members appear in the villa. The AD 33 treasury campaign is not imported.
 
+The expanded estate has its own residential plan and cohort ranks. [Expanded estate plan](canon/ESTATE_LAYOUT.md)
+
 All fourteen established adult women may be approached from the first afternoon. The small story is about spending time with someone who remains an individual beyond her duties. There is no imposed mystery or forced romance.
 
 ## Daily rhythm

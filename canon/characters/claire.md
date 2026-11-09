@@ -19,6 +19,8 @@ Controlled, practical, conscientious, and progressively more authoritative. Form
 
 Livia evaluates her work and may correct her precisely. Claire can direct ordinary Tier 0–3 tasks within her office but cannot grant ranks, adornment, lasting mirror access, perfume, intimate access, or punishment beyond her authority. Her eventual confirmation is not settled.
 
+On the expanded estate, her office faces the receiving court on the Lower House's east edge. Her adjoining private quarters open onto a side passage. [Expanded estate plan](../ESTATE_LAYOUT.md)
+
 ## Appearance
 
 Late 40s to early 50s; blonde American WASP, mature Riviera “wine-mom” elegance. Champagne-to-platinum shoulder-length soft waves, fair warm-neutral complexion, blue-grey eyes, realistically mature and shapely. Ivory, champagne, pearls, tailored resort sophistication. Never age her down into a young blonde influencer or confuse her with Maddie.

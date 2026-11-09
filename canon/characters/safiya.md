@@ -1,6 +1,6 @@
 # Safiya al-Nur — Second Cohort
 
-**Status:** Current working canon. **Rank:** Tier 0, Second Cohort. **Witness:** Saba al-Nur. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Saba al-Nur. **Office:** None.
 
 **Primary source:** [Safiya character page](https://app.notion.com/p/3ab982beff5c812f863eec5f5f88c615).
 
@@ -17,7 +17,7 @@ Moroccan Arab adult woman with scholarly composure, intellectual restraint, deli
 
 ## Relationships and presence
 
-Saba is her present Witness. Despite the same surname, they are **not established relatives** and have different ethnic/cultural backgrounds. She is currently a scholar/modesty-lane initiate, not a formal Veiled Vow member.
+Saba is her present Witness. Despite the same surname, they are **not established relatives** and have different ethnic/cultural backgrounds.
 
 ## Appearance
 

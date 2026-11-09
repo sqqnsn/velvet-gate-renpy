@@ -1,12 +1,12 @@
 # Samira al-Qamar — Second Cohort
 
-**Status:** Current working canon. **Rank:** Tier 0, Second Cohort. **Witness:** Ione of Rhodes. **Veiled Vow:** Candidate, not initiated. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Ione of Rhodes. **Veiled Vow:** Candidate, not initiated. **Office:** None.
 
 **Primary source:** [Samira character page](https://app.notion.com/p/3ab982beff5c81cb8439e9143889c121).
 
 ## Established personality
 
-Adult woman in her late twenties or early thirties whose inner identity tends toward private sacred restraint, silence, fragrance, intentional concealment, and a gothic-veiled aesthetic. She regards covering as an earned privilege, not something current Tier 0 status entitles her to.
+Adult woman in her late twenties or early thirties whose inner identity tends toward private sacred restraint, silence, fragrance, intentional concealment, and a gothic-veiled aesthetic. She regards formal covering as an earned privilege.
 
 ## Voice and behavior
 
@@ -21,7 +21,7 @@ Ione is her Witness. Their restraint differs: Ione tends toward inward disappear
 
 ## Appearance
 
-Mature adult with future gothic-veiled, dark modest aesthetic; future themes of gloves, scent, controlled gaze and refined coverings. Current Tier 0 clothes, footwear, jewelry and veil privileges remain plain/unearned.
+Mature adult with future gothic-veiled, dark modest aesthetic; future themes of gloves, scent, controlled gaze and refined coverings. Her Tier 0 wardrobe in *Seven Lanterns* is plain. Formal covering and adornment are earned privileges.
 
 ## Writing guardrails
 

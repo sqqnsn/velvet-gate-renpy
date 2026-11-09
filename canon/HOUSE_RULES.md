@@ -1,13 +1,12 @@
 # House rules and game continuity
 
-**Source:** [Villa Canon Hub — Core Rules](https://app.notion.com/p/367982beff5c80919d87df13fb07c59b), [First Cohort](https://app.notion.com/p/368982beff5c807f9275c96234fab005), [Livia](https://app.notion.com/p/3ab982beff5c8127b9e8cf808c64f94e). These pages contain the fuller institutional rules; this document is a concise **game-writing reference**, not a replacement.
+**Source:** [Villa Canon Hub — Core Rules](https://app.notion.com/p/367982beff5c80919d87df13fb07c59b), [First Cohort](https://app.notion.com/p/368982beff5c807f9275c96234fab005), [Livia](https://app.notion.com/p/3ab982beff5c8127b9e8cf808c64f94e). These pages give the institutional background for the house rules and the game-writing reference below.
 
 ## Invariants
 
 - Velvet Gate is a private Roman-inspired villa/House centered on discipline, ritual, service, desire, and earned access. **Only members** live in or enter the villa. Negotiations with outsiders, if any, occur off-site.
 - Domine and the Master are the same person: the player's role. Livia (First Girl, Keeper, House Mistress) is second authority and outside the tier ladder.
 - Claire Ashford is a Tier 3 Chamber Attendant appointed **provisional Mistress of the Lower House**. Her limited office is supervised by Livia; office does not automatically raise personal rank.
-- The six First Witnesses are Tier 1; the six Second Cohort women are presently Tier 0 in the current working character pages.
 - The Witness Burden pairs a First Witness with a Second Cohort member; it is guidance and accountability, **not independent disciplinary power**.
 - Low-rank individuality, color, jewelry, perfume, mirrors, garments, privacy, and proximity are conditional privileges. Their future style identities are not necessarily available in current scenes.
 - No extra authority or promotion may be inferred from beauty, seniority outside the villa, romance, or a character's own sense of superiority.
@@ -15,6 +14,11 @@
 - Ione has white or silver-white hair, never dark.
 - Livia may temper a rash decision for the House's stability without superseding Domine.
 - Claire and Livia remain characters with feelings and personalities, not mere menu screens.
+
+## Admission and cohort ranks by continuity
+
+- On the expanded estate, Livia's reception grants provisional membership at Tier 0. The Second Cohort are Tier 1 initiates and the First Witnesses are Tier 2. Both cohorts live in separate communal Lower House halls. The coast is shared by all members. [Expanded estate plan](ESTATE_LAYOUT.md)
+- In *Seven Lanterns*, the six First Witnesses are Tier 1 and the six Second Cohort women are Tier 0. [Demo design notes](../DESIGN_NOTES.md)
 
 ## Tone for this Ren'Py test
 

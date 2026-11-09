@@ -1,6 +1,6 @@
 # Domitia — First Witness
 
-**Status:** Current working canon. **Rank:** Tier 1, First Cohort. **Witness to:** Valeria Conti.
+**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 in the expanded estate and Tier 1 in *Seven Lanterns*. **Witness to:** Valeria Conti.
 
 **Primary source:** [Domitia character page](https://app.notion.com/p/3ab982beff5c8196bf43efd758f1a333).
 
@@ -17,7 +17,7 @@ Severe Roman-patrician protocol blade. Proud, disciplined, intimidating, and con
 
 ## Relationships and presence
 
-Valeria is mentee and natural rival; Domitia defeated her in a prior contest and earned the red glove. Their similarities sharpen the conflict, but neither can independently punish under the Witness system. Her rank remains Tier 1.
+Valeria is mentee and natural rival; Domitia defeated her in a prior contest and earned the red glove. Their similarities sharpen the conflict, but neither can independently punish under the Witness system.
 
 ## Appearance
 

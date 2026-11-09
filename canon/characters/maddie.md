@@ -1,6 +1,6 @@
 # Maddie Cross — First Witness
 
-**Status:** Current working canon. **Rank:** Tier 1, First Cohort. **Duty:** First Mat. **Witness to:** Silvana “Sylvie” Graves.
+**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 in the expanded estate and Tier 1 in *Seven Lanterns*. **Duty:** First Mat. **Witness to:** Silvana “Sylvie” Graves.
 
 **Primary source:** [Maddie character page](https://app.notion.com/p/3ab982beff5c810a8697e177aeee2767).
 
@@ -35,4 +35,4 @@ Not a generic shy ingénue, nor a brainless blonde. Keep social ambition and pla
 
 ## Open questions
 
-Readiness for Tier 2 and long-term office. The sample exchange is a newly written interpretation.
+The circumstances of her advancement and any future office are open. The sample exchange is a newly written interpretation.

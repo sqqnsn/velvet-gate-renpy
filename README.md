@@ -21,10 +21,11 @@ Use the repository's **Code → Download ZIP** option if you haven't cloned it l
 ## Start reading
 
 1. [House rules](canon/HOUSE_RULES.md) — hierarchy and continuity invariants.
-2. [Cast index](canon/CAST_INDEX.md) — all 14 women and links to their individual files.
-3. [Relationships](canon/RELATIONSHIPS.md) — Witness pairings, Sydney/Maddie, and group dynamics.
-4. [Character profiles](canon/characters/) — voice, behavior, visual anchors, things to avoid, and open questions.
-5. [Agent instructions](AGENTS.md) — how future coding/writing work should use the references.
+2. [Expanded estate plan](canon/ESTATE_LAYOUT.md) — approved geography, admission, housing, and circulation.
+3. [Cast index](canon/CAST_INDEX.md) — all 14 women, their ranks by continuity, and their profiles.
+4. [Relationships](canon/RELATIONSHIPS.md) — Witness pairings, Sydney/Maddie, and group dynamics.
+5. [Character profiles](canon/characters/) — voice, behavior, visual anchors, things to avoid, and open questions.
+6. [Agent instructions](AGENTS.md) — how future coding/writing work should use the references.
 
 ## Game structure
 

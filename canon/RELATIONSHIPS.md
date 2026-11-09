@@ -2,6 +2,8 @@
 
 Reference: [First Cohort / Witness pairings](https://app.notion.com/p/368982beff5c807f9275c96234fab005). Notes about Sydney and Maddie incorporate Domine's **November 2026 direct correction** and the recovered May 27 sorority-origin conversations.
 
+The Witness Burden pairings apply in both settings. On the expanded estate, the two cohorts use the shared Lower House court for guidance and daily contact. [Expanded estate plan](ESTATE_LAYOUT.md)
+
 ## Established connections
 
 | People | Nature of connection | Writing caution |
@@ -20,7 +22,7 @@ Reference: [First Cohort / Witness pairings](https://app.notion.com/p/368982beff
 ## Group-writing principles
 
 - The First Cohort women know one another as peers in origin but differ sharply in temperament.
-- Second Cohort members have internal identities even where Tier 0 rules restrict their outward presentation.
+- Second Cohort members have their own tastes and interests. Use the presentation privileges that apply to their rank in the scene's continuity.
 - A Witness pairing should create mundane mentoring scenes as well as discipline or tension.
 - Social histories can create old habits, jokes, warmth, and friction. Two people with shared history do not have to agree.
 - Characters can talk, prepare work, tease, help, read, rehearse, or relax when Domine is elsewhere.

@@ -1,6 +1,6 @@
 # Yara Haddad — First Witness
 
-**Status:** Current working canon. **Rank:** Tier 1, First Cohort. **Duties:** Door Girl, a practical assignment rather than an office. **Witness to:** Nisha Varma.
+**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 in the expanded estate and Tier 1 in *Seven Lanterns*. **Duties:** Door Girl, a practical assignment rather than an office. **Witness to:** Nisha Varma.
 
 **Primary source:** [Yara character page](https://app.notion.com/p/3ab982beff5c8164be40f3dc9ad12ca8). Historical scenes around May 29 and June 3, 2026, and Domine's November 2026 correction provide additional characterization.
 

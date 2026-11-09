@@ -22,6 +22,8 @@ Composed, observant, intelligent, quietly longing, and exacting. Her power is re
 - Oversees Witness responsibilities and readiness for advancement.
 - Mina is **not** yet her assigned attendant; that remains a possible future development.
 
+On the expanded estate, Livia formally receives candidates as provisional Tier 0 members. Her study and quarters lie in the northwest of the Grand Palace. [Expanded estate plan](../ESTATE_LAYOUT.md)
+
 ## Appearance
 
 Young adult Roman-Mediterranean/Italian woman, warm olive complexion, expressive eyes, very dark espresso-brown softly wavy hair often in an elegant low arrangement. Wine/burgundy drape and senior keys emphasize Keeper authority; ivory draping can signal private softness. Do not portray her as Asian, a generic influencer, or a caricature.
