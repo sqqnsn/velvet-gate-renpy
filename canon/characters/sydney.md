@@ -1,6 +1,6 @@
 # Sydney Lane — First Witness
 
-**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 in the expanded estate and Tier 1 in *Seven Lanterns*. **Witness to:** Mina.
+**Status:** Current working canon. **Cohort:** First Cohort. **Rank:** Tier 2 at the start of *Seven Lanterns* and on the expanded estate. **Witness to:** Mina.
 
 **Primary source:** [Sydney character page](https://app.notion.com/p/3ab982beff5c815c9cf5e14cebab7407). **User correction, November 2026:** Sydney is protective of Maddie as part of their shared sorority/social history; this is not limited to Mina.
 

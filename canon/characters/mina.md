@@ -1,6 +1,6 @@
 # Mina — Second Cohort
 
-**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Sydney Lane. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 at the start of *Seven Lanterns* and on the expanded estate. **Witness:** Sydney Lane. **Office:** None.
 
 **Primary source:** [Mina character page](https://app.notion.com/p/3ab982beff5c81d29837dd7b70ed0e05).
 
@@ -21,7 +21,7 @@ Sydney is her present Witness. Livia is a possible future supervisor/recipient o
 
 ## Appearance
 
-Clearly adult, petite/slim, Japanese-coded. Future signature wardrobe is neat white/pearl/ivory and pale blue, adult-proportioned low-heel Mary Janes, fine slingbacks, restrained socks. Her Tier 0 wardrobe in *Seven Lanterns* uses plain cream sandals and simpler garments.
+Clearly adult, petite/slim, Japanese-coded. Future signature wardrobe is neat white/pearl/ivory and pale blue, adult-proportioned low-heel Mary Janes, fine slingbacks, restrained socks. Her Tier 1 wardrobe in *Seven Lanterns* uses plain cream sandals and simpler garments.
 
 ## Writing guardrails
 

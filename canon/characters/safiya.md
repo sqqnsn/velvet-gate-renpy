@@ -1,6 +1,6 @@
 # Safiya al-Nur — Second Cohort
 
-**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Saba al-Nur. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 at the start of *Seven Lanterns* and on the expanded estate. **Witness:** Saba al-Nur. **Office:** None.
 
 **Primary source:** [Safiya character page](https://app.notion.com/p/3ab982beff5c812f863eec5f5f88c615).
 

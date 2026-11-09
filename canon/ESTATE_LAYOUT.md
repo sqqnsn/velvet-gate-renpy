@@ -2,7 +2,7 @@
 
 Domine approved this layout and cohort placement for the expanded estate. The estate covers about **10 hectares**. The working site envelope is **400 m east–west by 250 m north–south**. Room sizes, exact doors, and bed capacities are planning allowances.
 
-The expanded estate and the seven-day *Seven Lanterns* demo use the same core cast at different cohort ranks. The AD 33 financial-crisis campaign is a separate continuity. [Cast index](CAST_INDEX.md) · [Seven Lanterns design notes](../DESIGN_NOTES.md)
+The expanded estate and the seven-day *Seven Lanterns* demo use the same cast and starting cohort ranks. The promotion awarded in a playthrough belongs to the demo. The AD 33 financial-crisis campaign is a separate continuity. [Cast index](CAST_INDEX.md) · [Seven Lanterns design notes](../DESIGN_NOTES.md)
 
 ## Site and palace
 

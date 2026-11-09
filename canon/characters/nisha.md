@@ -1,6 +1,6 @@
 # Nisha / Nishanthika Varma — Second Cohort
 
-**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Yara Haddad. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 at the start of *Seven Lanterns* and on the expanded estate. **Witness:** Yara Haddad. **Office:** None.
 
 **Primary source:** [Nisha character page](https://app.notion.com/p/3ab982beff5c81968286cc7e85d42980).
 
@@ -21,7 +21,7 @@ Yara is her First Witness: their contrast is restraint versus expression, rather
 
 ## Appearance
 
-Adult Indian woman with dancer's posture and warm-brown complexion. Future style lanes include saffron, coral, peacock blue, emerald, refined dance-informed heels and fabric that responds to motion. In *Seven Lanterns*, her Tier 0 wardrobe uses plain clothing and tan flat sandals.
+Adult Indian woman with dancer's posture and warm-brown complexion. Future style lanes include saffron, coral, peacock blue, emerald, refined dance-informed heels and fabric that responds to motion. In *Seven Lanterns*, her Tier 1 wardrobe uses plain clothing and tan flat sandals.
 
 ## Writing guardrails
 

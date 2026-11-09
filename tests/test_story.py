@@ -36,6 +36,7 @@ def create_namespace():
     namespace = {}
     load_init_blocks(GAME / "routes.rpy", namespace)
     load_init_blocks(GAME / "ambient.rpy", namespace)
+    load_init_blocks(GAME / "promotion.rpy", namespace)
     order = namespace["VG_ORDER"]
     namespace["store"] = types.SimpleNamespace(
         vg_affinity={key: 0 for key in order},
@@ -43,6 +44,7 @@ def create_namespace():
         vg_memories={key: [] for key in order},
         vg_intent={key: False for key in order},
         vg_mutual={key: False for key in order},
+        vg_promoted=None,
     )
     namespace["renpy"] = types.SimpleNamespace(store=namespace["store"])
     return namespace
@@ -61,6 +63,12 @@ class VelvetGateLogicTests(unittest.TestCase):
     def completed(self, key):
         return self.ns["vg_is_complete"](
             key, self.store.vg_visits, self.store.vg_memories,
+            self.store.vg_intent, self.store.vg_mutual,
+        )
+
+    def finalists(self):
+        return self.ns["vg_best_connections"](
+            self.store.vg_affinity, self.store.vg_visits, self.store.vg_memories,
             self.store.vg_intent, self.store.vg_mutual,
         )
 
@@ -146,15 +154,77 @@ class VelvetGateLogicTests(unittest.TestCase):
         self.assertFalse(self.completed("claire"))
 
     def test_ending_prefers_affinity_then_focus_then_memories(self):
-        best = self.ns["vg_best_connections"]
-        self.assertEqual([], best(self.store.vg_affinity, self.store.vg_visits, self.store.vg_memories))
+        self.assertEqual([], self.finalists())
         self.focus("maddie", 0)
         self.focus("sydney", 0)
-        self.assertEqual(["maddie", "sydney"], best(
-            self.store.vg_affinity, self.store.vg_visits, self.store.vg_memories))
+        self.assertEqual(["maddie", "sydney"], self.finalists())
         self.focus("sydney", 1)
-        self.assertEqual(["sydney"], best(
-            self.store.vg_affinity, self.store.vg_visits, self.store.vg_memories))
+        self.assertEqual(["sydney"], self.finalists())
+
+    def test_both_tiers_cover_all_twelve_promotion_candidates(self):
+        tiers = self.ns["VG_PROMOTION_TIERS"]
+        self.assertEqual({"sylvie", "nisha", "valeria", "mina", "samira", "safiya"}, set(tiers[2]))
+        self.assertEqual({"maddie", "sydney", "domitia", "ione", "saba", "yara"}, set(tiers[3]))
+        stories = self.ns["VG_PROMOTION_STORIES"]
+        self.assertEqual(set(tiers[2]) | set(tiers[3]), set(stories))
+        for key, story in stories.items():
+            self.assertEqual({"morning", "greeting", "recall"}, set(story), key)
+            self.assertTrue(all(story.values()), key)
+
+    def test_promotion_awards_two_affinity_once_at_either_tier(self):
+        for winner, other in (("mina", "yara"), ("yara", "mina")):
+            with self.subTest(winner=winner):
+                ns = create_namespace()
+                store = ns["store"]
+                award = ns["vg_award_promotion"]
+                award("claire")
+                self.assertIsNone(store.vg_promoted)
+                award(winner)
+                award(winner)
+                award(other)
+                self.assertEqual(winner, store.vg_promoted)
+                self.assertEqual(2, store.vg_affinity[winner])
+                self.assertEqual([ns["VG_PROMOTION_MEMORY"]], store.vg_memories[winner])
+                self.assertEqual(0, store.vg_affinity[other])
+                self.assertEqual(0, store.vg_visits[winner])
+                self.assertFalse(store.vg_intent[winner])
+                self.assertFalse(store.vg_mutual[winner])
+
+    def test_promotion_memory_cannot_supply_a_personal_milestone(self):
+        for choice in (1, 1, 1, 0, 0):
+            self.focus("mina", choice)
+        self.assertTrue(self.store.vg_mutual["mina"])
+        self.ns["vg_award_promotion"]("mina")
+        self.assertFalse(self.completed("mina"))
+
+    def test_completed_courtship_beats_a_higher_affinity_promotion(self):
+        for choice in (0, 1, 1, 0, 0):
+            self.focus("maddie", choice)
+        for day in (1, 3, 6):
+            self.ns["vg_ambient_touch"]("yara", "terrace", day)
+        self.focus("yara", 0)
+        self.ns["vg_award_promotion"]("yara")
+        self.ns["vg_ambient_touch"]("yara", "terrace", 7)
+        self.focus("yara", 0)
+        self.assertTrue(self.completed("maddie"))
+        self.assertGreater(self.store.vg_affinity["yara"], self.store.vg_affinity["maddie"])
+        self.assertEqual(["maddie"], self.finalists())
+
+    def test_promotion_can_tip_an_unfinished_ending(self):
+        for _ in range(2):
+            self.focus("maddie", 0)
+        self.focus("yara", 0)
+        self.focus("yara", 1)
+        self.assertEqual(["maddie"], self.finalists())
+        self.ns["vg_award_promotion"]("yara")
+        self.assertEqual(["yara"], self.finalists())
+        self.assertFalse(self.completed("yara"))
+
+    def test_promotion_alone_does_not_select_a_romantic_finalist(self):
+        self.ns["vg_award_promotion"]("yara")
+        self.assertEqual([], self.finalists())
+        self.ns["vg_ambient_touch"]("yara", "terrace", 7)
+        self.assertEqual(["yara"], self.finalists())
 
     def test_ambient_has_fresh_seven_day_scenes_in_each_area(self):
         groups = self.ns["VG_AMBIENT"]

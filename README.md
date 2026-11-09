@@ -4,17 +4,16 @@ A **private, canon-first** development repository for a relaxed seven-day villa-
 
 ## Current status
 
-**Seven Lanterns demo v0.2 source is in `game/`.** All fourteen women can be pursued during a seven-day week. Every woman has five distinct courtship chapters, two follow-up afternoons, and a personal ending, alongside twenty-eight day-specific casual group scenes. The character bible remains a reference, not a set of retroactive story changes.
+**Seven Lanterns demo v0.3 is in `game/`.** All fourteen women can be pursued during the seven-day week. Domine also chooses one private promotion, with twelve candidates across two starting tiers. Each woman has five distinct courtship chapters, two follow-up afternoons, and a personal ending alongside the twenty-eight day-specific group scenes.
 
 The writing and Python logic have static tests. **Ren'Py SDK lint and an actual interactive playthrough remain to be done**; the SDK was not available in the development environment.
 
 ## Run the demo in Ren'Py
 
 1. Install the current [Ren'Py SDK](https://www.renpy.org/latest.html) on your computer and open its Launcher.
-2. Create a new Ren'Py project (for example `VelvetGateSevenLanterns`) with a standard GUI theme.
-3. In that new project's `game/` folder, **replace** the generated `script.rpy` with the one from this repository, and copy over `routes.rpy` and `ambient.rpy`. Retain the generated `screens.rpy`, `gui.rpy`, `options.rpy`, and standard GUI assets.
-4. Launch the project. The demo uses solid-color backgrounds and text; no external art, audio, or plugins are required.
-5. In the Launcher, select **Check Script (Lint)** before treating the game as ready to share.
+2. Place the repository folder in your Launcher projects directory. The folder contains the complete `game/` project.
+3. Select the project and choose **Launch Project**. The demo uses text and solid-color backgrounds.
+4. Use **Check Script (Lint)** and play through the week before sharing a build.
 
 Use the repository's **Code → Download ZIP** option if you haven't cloned it locally. Avoid installing the old four-character prototype over this version.
 
@@ -30,9 +29,10 @@ Use the repository's **Code → Download ZIP** option if you haven't cloned it l
 ## Game structure
 
 - One optional **casual group conversation** per morning, then one **dedicated afternoon** with any of the fourteen women, followed by a brief evening beat.
+- Livia and Claire discuss the possible promotion with Domine in private. On Day 6, he names one woman to advance a tier. Her new duty appears the next morning.
 - One hidden numeric relationship value per woman: **Affinity**. Visits, romantic intent, reciprocity, and remembered moments are *story conditions*, not extra meters.
 - Five substantial personal visits, including sincere interest and reciprocation, can secure a complete romance. Seven days cannot complete two romances. Sixth and seventh visits have new scenes instead of repeating the fifth.
-- A warm but incomplete path resolves toward the strongest relationship if the player spreads attention, with a player choice if leads tie.
+- The promotion grants its recipient **+2 hidden Affinity** and a memory. A completed courtship gets priority. Affinity can tip the closing scene between unfinished connections, with a player choice if the leads are tied after the other criteria.
 - Decisions and individual memories alter the tone and details of the closing scene. The interface never exposes affinity numbers.
 - Private, members-only villa life; no financial-crisis plot or outsiders entering the estate.
 
@@ -46,7 +46,7 @@ In a checkout with Python 3 available:
 python3 -m unittest discover -s tests -v
 ```
 
-The tests validate story-data syntax, route coverage, all fourteen complete endings, ambient scenes, tie selection, and milestone logic. They cannot validate Ren'Py script syntax or screen rendering; run the SDK's lint and play the full seven days for that.
+The tests validate story data, route coverage, the promotion branches, and finale selection. Use the SDK's lint and a playthrough to verify script execution and screen rendering.
 
 ## Sources
 

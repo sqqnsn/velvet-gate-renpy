@@ -1,6 +1,6 @@
 # Valeria Conti — Second Cohort
 
-**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Domitia. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 at the start of *Seven Lanterns* and on the expanded estate. **Witness:** Domitia. **Office:** None.
 
 **Primary source:** [Valeria character page](https://app.notion.com/p/3ab982beff5c818a8ad8c72df7e7aa25).
 
@@ -21,7 +21,7 @@ Domitia is her Witness and a natural rival. Domitia previously defeated her in a
 
 ## Appearance
 
-Adult Italian/Sicilian-coded woman, olive skin, sharp features, sleek and polished. Future personal wardrobe centers black lacquer, oxblood, red accents, narrow stilettos and patent mules. Her Tier 0 wardrobe in *Seven Lanterns* uses plain dark shoes and muted garments.
+Adult Italian/Sicilian-coded woman, olive skin, sharp features, sleek and polished. Future personal wardrobe centers black lacquer, oxblood, red accents, narrow stilettos and patent mules. Her Tier 1 wardrobe in *Seven Lanterns* uses plain dark shoes and muted garments.
 
 ## Writing guardrails
 

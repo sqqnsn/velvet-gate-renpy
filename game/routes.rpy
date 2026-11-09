@@ -82,7 +82,7 @@ init python:
               "Tease her gently about a fourth adjustment.", "Don't tempt me. I absolutely would do it."),
             R("Sydney passes with a knowing smile. Maddie waves her away, though she seems relieved to have been checked on.",
               "She knows all my tells. Sometimes that's the best thing about her, sometimes the worst.",
-              "Ask about what she and Sydney were like before the House.", "Oh, we were a handful. She still acts like she has to save me from myself.", "maddie_sydney",
+              "Ask about what she and Sydney were like before the House.", "We once turned up to a party in the same dress. Sydney had a plan before we'd put our bags down. Ask me for the rest sometime.", "maddie_matching_dresses",
               "Tell her it's nice to have an old friend nearby.", "It really is. I don't think I say it enough."),
             R("She is helping Sylvie sort garden cuttings. The conversation has gone quiet in a comfortable way.",
               "I thought taking care of someone meant always having an answer. Sylvie doesn't need a speech every minute.",
@@ -496,7 +496,7 @@ init python:
             "alternate_memory": "livia_breakfast", "alternate_recall": "The untouched breakfast tray comes to mind: the first time you persuaded Livia to accept the care she gives everyone else.",
         },
         "claire": {
-            "complete": "Claire joins you with her hair a little less perfectly arranged than usual. She has deliberately left the supper preparations to others.",
+            "complete": "Claire joins you with her hair a little less perfectly arranged than usual. She has left her tablet in her office for the rest of the afternoon.",
             "complete_speech": "Darling, I should very much like to see what happens when we stop planning every pleasant moment.",
             "incomplete": "Claire finds you at the last lamp, carrying no list for once.",
             "incomplete_speech": "You have been charming company. I hope you will allow me to be charmingly unprepared another day.",
@@ -506,7 +506,7 @@ init python:
         "maddie": {
             "complete": "Maddie appears with an irrepressible smile. She is neither performing for a room nor trying to hide her delight.",
             "complete_speech": "Okay, I know I'm smiling way too much. I don't care. I wanted this to be real, and it is.",
-            "incomplete": "Maddie catches you after supper, laughing when she realizes she's been rehearsing a casual greeting.",
+            "incomplete": "Maddie catches you in the colonnade, laughing when she realizes she's been rehearsing a casual greeting.",
             "incomplete_speech": "I like it when you find me. Maybe next time I'll stop pretending that's a coincidence.",
             "memory": "maddie_growing", "recall": "You recall her quietly making room for Sylvie, proud of helping without needing applause.",
             "alternate_memory": "maddie_flowers", "alternate_recall": "The little white garden flowers return to mind, and Maddie's delight that you noticed the ones she chose.",
@@ -530,7 +530,7 @@ init python:
         "ione": {
             "complete": "Ione's silver-white hair glows by the lantern. She carries warm tea, and she has brought enough to share.",
             "complete_speech": "I am here because I wish to be, not because I must make myself useful. May we keep learning that together?",
-            "incomplete": "Ione stands with you quietly, then asks whether you have eaten enough supper.",
+            "incomplete": "Ione stands with you quietly, then looks out toward the last light in the garden.",
             "incomplete_speech": "I have enjoyed being seen without being examined. I hope we might sit together again.",
             "memory": "ione_seen", "recall": "You remember the page that turned in the breeze, and her fragile realization that love is not the same as being needed.",
             "alternate_memory": "ione_tea", "alternate_recall": "You remember the cold cup you replaced for Ione, and how gently she welcomed your company.",
@@ -546,13 +546,13 @@ init python:
         "yara": {
             "complete": "Yara arrives with two slices of orange, offering one as if it is the most natural thing in the world.",
             "complete_speech": "No report tonight, Domine. Only this: I wanted to find you, and I am very glad I did.",
-            "incomplete": "Yara finds you after the supper conversation thins, a wry smile waiting at the edge of her mouth.",
+            "incomplete": "Yara finds you as the courtyard quiets, a wry smile waiting at the edge of her mouth.",
             "incomplete_speech": "An interesting week. I would be happy to waste another afternoon magnificently with you.",
             "memory": "yara_leisure", "recall": "An entire afternoon spent doing nothing becomes one of the week's most vivid memories.",
             "alternate_memory": "yara_humor", "alternate_recall": "You remember Yara's dry, three-word summary of Nisha's long and joyful rehearsal story.",
         },
         "sylvie": {
-            "complete": "Sylvie approaches from the garden, dark hair framing a shy but unhidden smile. She chooses the seat next to you.",
+            "complete": "Sylvie approaches from the garden, dark hair framing a shy but unhidden smile. She sits beside you when you gesture for her to stay.",
             "complete_speech": "I wanted to come. That's still a little frightening. And a lot wonderful.",
             "incomplete": "Sylvie lingers at the edge of the courtyard before deciding to come closer.",
             "incomplete_speech": "The arbor's quiet tomorrow, if you ever want to share it. I think I'd like that.",
@@ -576,9 +576,9 @@ init python:
             "alternate_memory": "valeria_precision", "alternate_recall": "You remember Valeria's three immaculate folds and her wry hope that Domitia would notice twice.",
         },
         "mina": {
-            "complete": "Mina comes to sit beside you of her own accord. Her words are gentle, but there is no uncertainty in the choice.",
+            "complete": "Mina comes to find you of her own accord. When you invite her to sit, she has already decided what she wants to say.",
             "complete_speech": "I wanted to come here. I wanted to see you. I am glad I can say both things myself.",
-            "incomplete": "Mina pauses near you, then takes the empty chair after a moment's thoughtful decision.",
+            "incomplete": "Mina pauses near you. You offer her the empty chair, and her smile comes slowly.",
             "incomplete_speech": "Would you like to listen to music with me another day? I know a piece you might love.",
             "memory": "mina_wants", "recall": "You recall the day she insisted that being cared for and having her own wishes were not opposites.",
             "alternate_memory": "mina_cup", "alternate_recall": "A little chipped cup returns to mind, and Mina's quiet initiative in keeping someone safe.",
@@ -586,7 +586,7 @@ init python:
         "samira": {
             "complete": "Samira comes into the lamplight without covering her face or making a ritual of her arrival. Her choice is private but clear.",
             "complete_speech": "I wish to be known by you. Not all at once—and never because I am required to—but willingly.",
-            "incomplete": "Samira approaches after supper with the calm of someone who has decided to speak, not merely remain silent.",
+            "incomplete": "Samira approaches as the lamps are being lit, with the calm of someone who has decided what to say.",
             "incomplete_speech": "There is a quiet place to read tomorrow. I would welcome your company, if you wish it.",
             "memory": "samira_humor", "recall": "You smile at the carefully concealed humor she once admitted to keeping in reserve.",
             "alternate_memory": "samira_rest", "alternate_recall": "You remember Samira's precise folded linens, and her wish for a place where silence could simply rest.",
@@ -621,16 +621,26 @@ init python:
 
     def vg_is_complete(key, visits, memories, intent, mutual):
         """A successful romance needs time, sincerity, and reciprocal choice."""
-        personal_memories = [m for m in memories[key] if not m.startswith("ambient_")]
+        personal_memories = [
+            memory for memory in memories[key]
+            if memory != VG_PROMOTION_MEMORY and not memory.startswith("ambient_")
+        ]
         return (visits[key] >= 5 and intent[key] and mutual[key]
                 and len(personal_memories) >= 3)
 
-    def vg_best_connections(affinity, visits, memories):
-        """Affinity leads; focused encounters and recalled moments break ties."""
-        active = [key for key in VG_ORDER if visits[key] or affinity[key]]
+    def vg_best_connections(affinity, visits, memories, intent, mutual):
+        """Rank completed courtships first, then resolve by affinity and time together."""
+        active = [
+            key for key in VG_ORDER
+            if visits[key] or any(memory != VG_PROMOTION_MEMORY for memory in memories[key])
+        ]
         if not active:
             return []
+
         def rank(key):
-            return (affinity[key], visits[key], len(memories[key]))
+            complete = vg_is_complete(key, visits, memories, intent, mutual)
+            shared_moments = sum(memory != VG_PROMOTION_MEMORY for memory in memories[key])
+            return (complete, affinity[key], visits[key], shared_moments)
+
         highest = max(rank(key) for key in active)
         return [key for key in active if rank(key) == highest]

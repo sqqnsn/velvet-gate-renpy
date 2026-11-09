@@ -18,7 +18,7 @@
 ## Admission and cohort ranks by continuity
 
 - On the expanded estate, Livia's reception grants provisional membership at Tier 0. The Second Cohort are Tier 1 initiates and the First Witnesses are Tier 2. Both cohorts live in separate communal Lower House halls. The coast is shared by all members. [Expanded estate plan](ESTATE_LAYOUT.md)
-- In *Seven Lanterns*, the six First Witnesses are Tier 1 and the six Second Cohort women are Tier 0. [Demo design notes](../DESIGN_NOTES.md)
+- In *Seven Lanterns*, the six First Witnesses begin at Tier 2 and the six Second Cohort women begin at Tier 1. Domine may select one woman to advance a tier in a playthrough. [Demo design notes](../DESIGN_NOTES.md)
 
 ## Tone for this Ren'Py test
 

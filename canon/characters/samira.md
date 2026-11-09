@@ -1,6 +1,6 @@
 # Samira al-Qamar — Second Cohort
 
-**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 in the expanded estate and Tier 0 in *Seven Lanterns*. **Witness:** Ione of Rhodes. **Veiled Vow:** Candidate, not initiated. **Office:** None.
+**Status:** Current working canon. **Cohort:** Second Cohort. **Rank:** Tier 1 at the start of *Seven Lanterns* and on the expanded estate. **Witness:** Ione of Rhodes. **Veiled Vow:** Candidate, not initiated. **Office:** None.
 
 **Primary source:** [Samira character page](https://app.notion.com/p/3ab982beff5c81cb8439e9143889c121).
 
@@ -21,7 +21,7 @@ Ione is her Witness. Their restraint differs: Ione tends toward inward disappear
 
 ## Appearance
 
-Mature adult with future gothic-veiled, dark modest aesthetic; future themes of gloves, scent, controlled gaze and refined coverings. Her Tier 0 wardrobe in *Seven Lanterns* is plain. Formal covering and adornment are earned privileges.
+Mature adult with future gothic-veiled, dark modest aesthetic; future themes of gloves, scent, controlled gaze and refined coverings. Her Tier 1 wardrobe in *Seven Lanterns* is plain. Formal covering and adornment are earned privileges.
 
 ## Writing guardrails
 

@@ -2,9 +2,6 @@
 # A standalone, text-first, seven-day Ren'Py game.
 # Continuity follows ../canon/; scenes written here are game-only interpretations.
 
-define config.name = _("Velvet Gate: Seven Lanterns")
-define config.version = "0.2.0-demo"
-
 define vg_livia = Character("Livia", color="#c9b7ee")
 define vg_claire = Character("Claire", color="#e4c4a3")
 define vg_maddie = Character("Maddie", color="#efb5cf")
@@ -35,6 +32,7 @@ image vg terrace = Solid("#302529")
 image vg garden = Solid("#19312d")
 image vg library = Solid("#26283b")
 image vg music = Solid("#322637")
+image vg chamber = Solid("#28262e")
 image vg evening = Solid("#141c2b")
 
 # Only affinity is a numeric relationship metric. All other values record story facts.
@@ -56,6 +54,7 @@ default vg_line = ""
 default vg_reply = ""
 default vg_finalists = []
 default vg_ending_data = {}
+default vg_ending_kind = ""
 default vg_ending_line = ""
 
 screen vg_day_marker():
@@ -70,7 +69,7 @@ screen vg_day_marker():
             text "VELVET GATE" color "#ead5ad" bold True size 20
             text "Day [vg_day] of 7" color "#e2d8e9" size 16
 
-screen vg_finalist_picker(keys):
+screen vg_finalist_picker(keys, prompt="Several connections remain equally close. Whose company do you seek?", allow_back=False):
     modal True
     zorder 100
     frame:
@@ -81,9 +80,11 @@ screen vg_finalist_picker(keys):
         padding (30, 26)
         vbox:
             spacing 12
-            text "Several connections remain equally close. Whose company do you seek tonight?" color "#f4dfbc" size 23
+            text prompt color "#f4dfbc" size 23
             for key in keys:
                 textbutton VG_NAMES[key] action Return(key)
+            if allow_back:
+                textbutton "Go back" action Return("")
 
 label start:
     scene vg atrium
@@ -91,12 +92,10 @@ label start:
     show screen vg_day_marker
 
     "VELVET GATE — SEVEN LANTERNS"
-    "Beyond the garden walls, the world continues. Inside this private House, the week promises no grand crisis—only ordinary days and the women who give them shape."
-    "You are Domine, master of Velvet Gate. All fourteen women belong to its life, though no one's heart is a privilege to be commanded."
+    "The sea breeze reaches the atrium before you do. The House has laid your place in the shade, with bread and water ready at your hand."
+    "You are Domine, master of Velvet Gate. Livia, your Keeper, waits until you are seated before bringing Claire forward."
     vg_livia "You have seven afternoons free of urgent business, Domine. I took the liberty of preserving them."
-    vg_claire "The Lower House will continue its ordinary work. Nothing requires a performance in your honor, darling."
-    vg_livia "You might spend them in company. Some of us would welcome being known beyond our duties."
-    "You can share a casual morning with the House each day, then give one person your undivided afternoon. Seven days leave time for one close courtship, should it be returned."
+    "You can share a casual morning with the House each day, then give one woman your undivided afternoon. Seven days leave time for one close courtship, should it be returned."
     jump vg_day_loop
 
 label vg_day_loop:
@@ -110,8 +109,9 @@ label vg_morning:
     scene vg atrium
     with dissolve
     if vg_day == 1:
-        "DAY ONE — The unhurried table"
-        "Morning bread passes from hand to hand. Claire checks the seating; Livia merely watches you notice who is already laughing."
+        "DAY ONE — Morning business"
+        vg_claire "The Lower House is settled, Domine. I've set out the week's duties and left the music room free after the midday bell."
+        call vg_promotion_briefing from _call_vg_promotion_briefing
     elif vg_day == 2:
         "DAY TWO — Familiar company"
         vg_maddie "I said I'd be ready early. Sydney says my version of early is decorative."
@@ -132,8 +132,7 @@ label vg_morning:
         "A shared joke, a withheld confidence, a hand not quite withdrawn: the small events of the week have begun to accumulate."
     else:
         "DAY SEVEN — The final lantern"
-        "Tonight the House will take supper under seven lamps. There are no guests; this gathering belongs to its members alone."
-        vg_livia "Do not spend your final afternoon choosing what ought to impress us. Choose whom you wish to understand."
+        call vg_promotion_morning from _call_vg_promotion_morning
     return
 
 label vg_focus_menu:
@@ -251,14 +250,14 @@ label vg_focus_scene:
     jump vg_end_day
 
 label vg_end_day:
+    if vg_day == 7:
+        jump vg_finale
     scene vg evening
     with dissolve
     if vg_day == 3:
         vg_livia "I hope you are finding more than agreeable conversation, Domine. Agreement is the simplest thing to offer a master."
     elif vg_day == 6:
-        vg_claire "Tomorrow is the last evening of this little reprieve. If there is something you mean to say, do not let etiquette say it for you."
-    elif vg_day == 7:
-        "At sunset, the seven lamps are placed along the courtyard. The women gather in their own small knots of conversation."
+        call vg_promotion_decision from _call_vg_promotion_decision
     else:
         "At dusk, the House settles into familiar sounds: sandals on stone, conversation in distant rooms, water in the garden."
     $ vg_day += 1
@@ -268,8 +267,8 @@ label vg_finale:
     hide screen vg_day_marker
     scene vg evening
     with fade
-    "The seventh lantern burns low. Supper is over; a last stretch of the evening remains unclaimed."
-    $ vg_finalists = vg_best_connections(vg_affinity, vg_visits, vg_memories)
+    "The last afternoon slips toward dusk. Beyond the colonnade, the first lamps have been lit."
+    $ vg_finalists = vg_best_connections(vg_affinity, vg_visits, vg_memories, vg_intent, vg_mutual)
     if not vg_finalists:
         vg_livia "A quiet week is not a wasted one, Domine. The House will still be here in the morning."
         "You leave the courtyard with the pleasant certainty that there are many people here you have yet to know."
@@ -283,17 +282,20 @@ label vg_finale:
 
     $ vg_speaker = vg_speakers[vg_current_key]
     $ vg_ending_data = VG_ENDINGS[vg_current_key]
-    if vg_is_complete(vg_current_key, vg_visits, vg_memories, vg_intent, vg_mutual):
-        $ vg_ending_line = vg_ending_data["complete"]
-        "[vg_ending_line]"
-        $ vg_line = vg_ending_data["complete_speech"]
+    $ vg_ending_kind = "complete" if vg_is_complete(vg_current_key, vg_visits, vg_memories, vg_intent, vg_mutual) else "incomplete"
+    $ vg_ending_line = vg_ending_data[vg_ending_kind]
+    "[vg_ending_line]"
+    if vg_current_key == "maddie" and "maddie_matching_dresses" in vg_memories["maddie"]:
+        "You ask what Sydney did when she saw the matching dresses. Maddie's smile comes before her answer."
+        vg_maddie "You remember exactly where I stopped. I was hoping you'd ask again."
+    if VG_PROMOTION_MEMORY in vg_memories[vg_current_key]:
+        $ vg_line = VG_PROMOTION_STORIES[vg_current_key]["recall"]
         vg_speaker "[vg_line]"
+    $ vg_line = vg_ending_data[vg_ending_kind + "_speech"]
+    vg_speaker "[vg_line]"
+    if vg_ending_kind == "complete":
         "The promise is mutual. This week closes one chapter, but not the bond you have chosen to begin."
     else:
-        $ vg_ending_line = vg_ending_data["incomplete"]
-        "[vg_ending_line]"
-        $ vg_line = vg_ending_data["incomplete_speech"]
-        vg_speaker "[vg_line]"
         "There is warmth here, perhaps the beginning of something. Seven days cannot tell the whole story."
 
     if vg_ending_data["memory"] in vg_memories[vg_current_key]:
