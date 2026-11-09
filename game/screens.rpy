@@ -95,7 +95,10 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-screen say(who, what):
+screen say(who, what, portrait=None):
+
+    if portrait is not None:
+        add portrait at vg_dialogue_portrait
 
     window:
         id "window"

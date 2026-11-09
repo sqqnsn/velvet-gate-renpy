@@ -16,7 +16,8 @@ init python:
         "samira": "Samira", "safiya": "Safiya",
     }
 
-    def R(opening, line, warm_option, warm_reply, memory, gentle_option, gentle_reply):
+    def R(opening, line, warm_option, warm_reply, memory, gentle_option, gentle_reply,
+          *, portrait=None, warm_portrait=None):
         """A story chapter with a memorable and a courteous reply.
 
         The first option never implies entitlement; it expresses attention or care.
@@ -24,8 +25,9 @@ init python:
         """
         return {
             "opening": opening, "line": line,
+            "portrait": portrait,
             "choices": (
-                {"text": warm_option, "reply": warm_reply, "memory": memory},
+                {"text": warm_option, "reply": warm_reply, "memory": memory, "portrait": warm_portrait or portrait},
                 {"text": gentle_option, "reply": gentle_reply, "memory": None},
             ),
         }
@@ -35,19 +37,23 @@ init python:
             R("A breakfast tray sits untouched beside Livia's neat lists. Her dark hair is pinned low; the Keeper's keys rest within reach.",
               "The House has eaten. Its keeper, apparently, may wait.",
               "Sit with her and ask her to eat while you do.", "A sensible order, Domine. Almost suspiciously sensible.", "livia_breakfast",
-              "Thank her for seeing to the meal.", "Naturally. I will eat once these matters are settled."),
+              "Thank her for seeing to the meal.", "Naturally. I will eat once these matters are settled.",
+              portrait="livia unconvinced", warm_portrait="livia knowing_challenge"),
             R("The study window overlooks the courtyard. Livia has just corrected a ledger and left the ink to dry.",
               "Claire would call this a productive morning. I would call it six prevented mistakes.",
               "Ask which mistake made her laugh, if any.", "One involved your own handwriting. I thought it kinder not to say.", "livia_laughter",
-              "Ask whether the records are now settled.", "They are. You may consider that my modest triumph."),
+              "Ask whether the records are now settled.", "They are. You may consider that my modest triumph.",
+              portrait="livia explaining", warm_portrait="livia hands_on_hips"),
             R("She opens a drawer to return a ribbon entrusted to her and pauses over the old things that accumulate in her care.",
               "I remember where everything belongs. That is useful, until people begin to think I belong nowhere else.",
               "Tell her she deserves a place that is simply hers.", "I had not expected you to notice the distinction. Thank you.", "livia_place",
-              "Ask how you can lighten her duties.", "You already have. This hour has remained undisturbed."),
+              "Ask how you can lighten her duties.", "You already have. This hour has remained undisturbed.",
+              portrait="livia considering", warm_portrait="livia listening"),
             R("Livia stands beside the open shutters. For once, there is no list in her hand.",
               "If I set down the keys for an hour, I wonder whether you would still seek me out.",
               "Say you came for Livia, not the Keeper.", "Then I shall try to believe you mean the woman as much as the office.", "livia_woman",
-              "Promise that her work is appreciated.", "I know, Domine. I am grateful you say so."),
+              "Promise that her work is appreciated.", "I know, Domine. I am grateful you say so.",
+              portrait="livia considering", warm_portrait="livia fingertip_at_lip"),
             R("At the end of a long afternoon, Livia has set her keys on the table between you.",
               "I can keep a hundred things safe. What I cannot do is decide what you truly want of me.",
               "Ask if she would welcome a more personal courtship.", "Yes. If it begins with honesty, and leaves room for me to answer honestly too.", "livia_choice",

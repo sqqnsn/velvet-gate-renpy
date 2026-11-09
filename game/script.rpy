@@ -25,7 +25,7 @@ define vg_speakers = {
     "samira": vg_samira, "safiya": vg_safiya,
 }
 
-# No art assets are required for this test build; these are atmospheric placeholders.
+# Atmospheric placeholders for the room backgrounds.
 image vg atrium = Solid("#231c28")
 image vg study = Solid("#2c2533")
 image vg terrace = Solid("#302529")
@@ -94,7 +94,7 @@ label start:
     "VELVET GATE — SEVEN LANTERNS"
     "The sea breeze reaches the atrium before you do. The House has laid your place in the shade, with bread and water ready at your hand."
     "You are Domine, master of Velvet Gate. Livia, your Keeper, waits until you are seated before bringing Claire forward."
-    vg_livia "You have seven afternoons free of urgent business, Domine. I took the liberty of preserving them."
+    vg_livia "You have seven afternoons free of urgent business, Domine. I took the liberty of preserving them." (show_portrait="livia explaining")
     "You can share a casual morning with the House each day, then give one woman your undivided afternoon. Seven days leave time for one close courtship, should it be returned."
     jump vg_day_loop
 
@@ -126,7 +126,7 @@ label vg_morning:
     elif vg_day == 5:
         "DAY FIVE — A gentler rhythm"
         vg_claire "The rooms are in order, and for once nobody is in a hurry. I almost distrust it."
-        vg_livia "Enjoy it before it becomes another duty."
+        vg_livia "Enjoy it before it becomes another duty." (show_portrait="livia knowing_challenge")
     elif vg_day == 6:
         "DAY SIX — What you remember"
         "A shared joke, a withheld confidence, a hand not quite withdrawn: the small events of the week have begun to accumulate."
@@ -231,14 +231,16 @@ label vg_focus_scene:
     with dissolve
 
     "[vg_opening]"
-    vg_speaker "[vg_line]"
+    vg_speaker "[vg_line]" (show_portrait=vg_encounter.get("portrait"))
     menu:
         "[vg_first_option]":
             $ vg_choice_number = 0
         "[vg_second_option]":
             $ vg_choice_number = 1
     $ vg_reply = vg_encounter["choices"][vg_choice_number]["reply"]
-    vg_speaker "[vg_reply]"
+    vg_speaker "[vg_reply]" (
+        show_portrait=vg_encounter["choices"][vg_choice_number].get("portrait", vg_encounter.get("portrait"))
+    )
     $ vg_record_focus(vg_current_key, vg_visit_number, vg_choice_number, vg_encounter)
 
     if vg_mutual[vg_current_key] and vg_choice_number == 0:
@@ -255,7 +257,7 @@ label vg_end_day:
     scene vg evening
     with dissolve
     if vg_day == 3:
-        vg_livia "I hope you are finding more than agreeable conversation, Domine. Agreement is the simplest thing to offer a master."
+        vg_livia "I hope you are finding more than agreeable conversation, Domine. Agreement is the simplest thing to offer a master." (show_portrait="livia unconvinced")
     elif vg_day == 6:
         call vg_promotion_decision from _call_vg_promotion_decision
     else:
@@ -270,7 +272,7 @@ label vg_finale:
     "The last afternoon slips toward dusk. Beyond the colonnade, the first lamps have been lit."
     $ vg_finalists = vg_best_connections(vg_affinity, vg_visits, vg_memories, vg_intent, vg_mutual)
     if not vg_finalists:
-        vg_livia "A quiet week is not a wasted one, Domine. The House will still be here in the morning."
+        vg_livia "A quiet week is not a wasted one, Domine. The House will still be here in the morning." (show_portrait="livia listening")
         "You leave the courtyard with the pleasant certainty that there are many people here you have yet to know."
         jump vg_credits
     if len(vg_finalists) > 1:

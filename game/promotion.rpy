@@ -89,9 +89,9 @@ init python:
 
 label vg_promotion_briefing:
     "Claire finishes her report. Livia waits until the last footsteps have receded along the colonnade."
-    vg_livia "A small matter for the three of us, Domine. There is room to advance one woman this week. An Initiate could take a regular atrium post, or a First Witness could be trusted with chamber service."
+    vg_livia "A small matter for the three of us, Domine. There is room to advance one woman this week. An Initiate could take a regular atrium post, or a First Witness could be trusted with chamber service." (show_portrait="livia explaining")
     vg_claire "You'll see them at their usual work. I can tell you how they get on in the Lower House when the time comes."
-    vg_livia "I'll ask you for a name at the end of the week."
+    vg_livia "I'll ask you for a name at the end of the week." (show_portrait="livia listening")
     return
 
 label vg_promotion_decision:
@@ -100,7 +100,7 @@ label vg_promotion_decision:
     scene vg study
     with dissolve
     "At dusk, your place in Livia's study is ready. Claire sets her tablet aside as soon as you enter."
-    vg_livia "Have you settled on someone, Domine?"
+    vg_livia "Have you settled on someone, Domine?" (show_portrait="livia considering")
     jump vg_promotion_review
 
 label vg_promotion_review:
