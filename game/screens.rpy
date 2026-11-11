@@ -98,7 +98,12 @@ style frame:
 screen say(who, what, portrait=None):
 
     if portrait is not None:
-        add portrait at vg_dialogue_portrait
+        $ portrait_tag = portrait.partition(" ")[0] if hasattr(portrait, "partition") else None
+
+        if portrait_tag in ("claire", "maddie", "yara"):
+            add portrait at vg_fullbody_dialogue_portrait
+        else:
+            add portrait at vg_dialogue_portrait
 
     window:
         id "window"
