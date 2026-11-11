@@ -3,13 +3,13 @@
 # Continuity follows ../canon/; scenes written here are game-only interpretations.
 
 define vg_livia = Character("Livia", color="#c9b7ee")
-define vg_claire = Character("Claire", color="#e4c4a3")
-define vg_maddie = Character("Maddie", color="#efb5cf")
+define vg_claire = Character("Claire", color="#e4c4a3", show_portrait="claire listening")
+define vg_maddie = Character("Maddie", color="#efb5cf", show_portrait="maddie listening")
 define vg_sydney = Character("Sydney", color="#9cc9de")
 define vg_domitia = Character("Domitia", color="#e3ca9c")
 define vg_ione = Character("Ione", color="#dddce9")
 define vg_saba = Character("Saba", color="#d9b27b")
-define vg_yara = Character("Yara", color="#b3d3bd")
+define vg_yara = Character("Yara", color="#b3d3bd", show_portrait="yara listening")
 define vg_sylvie = Character("Sylvie", color="#baacd2")
 define vg_nisha = Character("Nisha", color="#e6b49a")
 define vg_valeria = Character("Valeria", color="#e6a4ad")
@@ -23,6 +23,15 @@ define vg_speakers = {
     "saba": vg_saba, "yara": vg_yara, "sylvie": vg_sylvie,
     "nisha": vg_nisha, "valeria": vg_valeria, "mina": vg_mina,
     "samira": vg_samira, "safiya": vg_safiya,
+}
+
+define vg_finale_portraits = {
+    ("claire", "complete"): "claire affectionate",
+    ("claire", "incomplete"): "claire happy",
+    ("maddie", "complete"): "maddie happy",
+    ("maddie", "incomplete"): "maddie affectionate",
+    ("yara", "complete"): "yara affectionate",
+    ("yara", "incomplete"): "yara knowing_challenge",
 }
 
 # Atmospheric placeholders for the room backgrounds.
@@ -110,22 +119,22 @@ label vg_morning:
     with dissolve
     if vg_day == 1:
         "DAY ONE — Morning business"
-        vg_claire "The Lower House is settled, Domine. I've set out the week's duties and left the music room free after the midday bell."
+        vg_claire "The Lower House is settled, Domine. I've set out the week's duties and left the music room free after the midday bell." (show_portrait="claire explaining")
         call vg_promotion_briefing from _call_vg_promotion_briefing
     elif vg_day == 2:
         "DAY TWO — Familiar company"
-        vg_maddie "I said I'd be ready early. Sydney says my version of early is decorative."
+        vg_maddie "I said I'd be ready early. Sydney says my version of early is decorative." (show_portrait="maddie happy")
         vg_sydney "I said it with affection. Mostly."
     elif vg_day == 3:
         "DAY THREE — Things worth repeating"
-        vg_yara "Nisha has suggested music with breakfast. I suggested we first survive breakfast."
+        vg_yara "Nisha has suggested music with breakfast. I suggested we first survive breakfast." (show_portrait="yara unconvinced")
         vg_nisha "You could have said yes and saved us both time."
     elif vg_day == 4:
         "DAY FOUR — A spell of rain"
         "Rain closes the garden paths for an hour. The covered walks, however, belong to anyone willing to linger."
     elif vg_day == 5:
         "DAY FIVE — A gentler rhythm"
-        vg_claire "The rooms are in order, and for once nobody is in a hurry. I almost distrust it."
+        vg_claire "The rooms are in order, and for once nobody is in a hurry. I almost distrust it." (show_portrait="claire knowing_challenge")
         vg_livia "Enjoy it before it becomes another duty." (show_portrait="livia knowing_challenge")
     elif vg_day == 6:
         "DAY SIX — What you remember"
@@ -289,12 +298,12 @@ label vg_finale:
     "[vg_ending_line]"
     if vg_current_key == "maddie" and "maddie_matching_dresses" in vg_memories["maddie"]:
         "You ask what Sydney did when she saw the matching dresses. Maddie's smile comes before her answer."
-        vg_maddie "You remember exactly where I stopped. I was hoping you'd ask again."
+        vg_maddie "You remember exactly where I stopped. I was hoping you'd ask again." (show_portrait="maddie happy")
     if VG_PROMOTION_MEMORY in vg_memories[vg_current_key]:
         $ vg_line = VG_PROMOTION_STORIES[vg_current_key]["recall"]
         vg_speaker "[vg_line]"
     $ vg_line = vg_ending_data[vg_ending_kind + "_speech"]
-    vg_speaker "[vg_line]"
+    vg_speaker "[vg_line]" (show_portrait=vg_finale_portraits.get((vg_current_key, vg_ending_kind)))
     if vg_ending_kind == "complete":
         "The promise is mutual. This week closes one chapter, but not the bond you have chosen to begin."
     else:
