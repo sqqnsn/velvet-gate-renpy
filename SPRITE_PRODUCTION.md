@@ -107,9 +107,10 @@ define vg_<key> = Character("Name", color="#hex", show_portrait="<key> listening
 
 New close-framed masters use `vg_dialogue_portrait`. Do not add the character to
 the `vg_fullbody_dialogue_portrait` branch; that branch is a compatibility rule
-for the existing Claire and Yara full-body source files. Maddie's dialogue
-portraits use the close crop. Her optional head-to-toe variants live in
-`game/images/maddie/fullbody/`, with `_fullbody` filenames.
+for Yara's existing full-body source files. Claire and Maddie use the close
+dialogue crop. Claire's original full-body references and Maddie's head-to-toe
+variants live in `game/images/claire/fullbody/` and
+`game/images/maddie/fullbody/`, respectively, with `_fullbody` filenames.
 
 Add complete and incomplete finale choices to `vg_finale_portraits`, and attach
 specific route portraits with `portrait=` and `warm_portrait=` when the neutral

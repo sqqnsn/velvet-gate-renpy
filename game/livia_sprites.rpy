@@ -11,7 +11,7 @@ transform vg_dialogue_portrait:
     yalign 1.0
     zoom 0.62
 
-# Claire and Yara use full-body source art. Keep those images near
+# Yara uses full-body source art. Keep her images near
 # native resolution and anchor them from the top so their upper-body framing
 # matches Livia without changing or re-encoding the PNG files.
 transform vg_fullbody_dialogue_portrait:
