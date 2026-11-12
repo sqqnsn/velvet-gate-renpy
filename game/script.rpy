@@ -11,7 +11,7 @@ define vg_ione = Character("Ione", color="#dddce9")
 define vg_saba = Character("Saba", color="#d9b27b")
 define vg_yara = Character("Yara", color="#b3d3bd", show_portrait="yara listening")
 define vg_sylvie = Character("Sylvie", color="#baacd2")
-define vg_nisha = Character("Nisha", color="#e6b49a")
+define vg_nisha = Character("Nisha", color="#e6b49a", show_portrait="nisha listening")
 define vg_valeria = Character("Valeria", color="#e6a4ad")
 define vg_mina = Character("Mina", color="#badcde")
 define vg_samira = Character("Samira", color="#c4bacb")
@@ -34,6 +34,8 @@ define vg_finale_portraits = {
     ("maddie", "incomplete"): "maddie affectionate",
     ("yara", "complete"): "yara affectionate",
     ("yara", "incomplete"): "yara knowing_challenge",
+    ("nisha", "complete"): "nisha affectionate",
+    ("nisha", "incomplete"): "nisha happy",
 }
 
 # Environment art leaves the center clear for portraits and the lower area
