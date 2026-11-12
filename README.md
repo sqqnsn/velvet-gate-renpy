@@ -6,13 +6,13 @@ A **private, canon-first** development repository for a relaxed seven-day villa-
 
 **Seven Lanterns demo v0.3 is in `game/`.** All fourteen women can be pursued during the seven-day week. Domine also chooses one private promotion, with twelve candidates across two starting tiers. Each woman has five distinct courtship chapters, two follow-up afternoons, and a personal ending alongside the twenty-eight day-specific group scenes.
 
-The writing and Python logic have static tests. **Ren'Py SDK lint and an actual interactive playthrough remain to be done**; the SDK was not available in the development environment.
+All eight locations now have 1920 × 1080 environment art. Livia, Claire, Maddie, and Yara have 31 dialogue sprites between them; the other ten women remain text-only. The writing and Python logic have static tests, and Ren'Py 8.5.3 has compiled and launched the project successfully. **A saved SDK lint report and a documented full-week playthrough remain to be done.**
 
 ## Run the demo in Ren'Py
 
 1. Install the current [Ren'Py SDK](https://www.renpy.org/latest.html) on your computer and open its Launcher.
 2. Place the repository folder in your Launcher projects directory. The folder contains the complete `game/` project.
-3. Select the project and choose **Launch Project**. The demo uses text and solid-color backgrounds.
+3. Select the project and choose **Launch Project**.
 4. Use **Check Script (Lint)** and play through the week before sharing a build.
 
 Use the repository's **Code → Download ZIP** option if you haven't cloned it locally. Avoid installing the old four-character prototype over this version.
@@ -24,7 +24,9 @@ Use the repository's **Code → Download ZIP** option if you haven't cloned it l
 3. [Cast index](canon/CAST_INDEX.md) — all 14 women, their ranks by continuity, and their profiles.
 4. [Relationships](canon/RELATIONSHIPS.md) — Witness pairings, Sydney/Maddie, and group dynamics.
 5. [Character profiles](canon/characters/) — voice, behavior, visual anchors, things to avoid, and open questions.
-6. [Agent instructions](AGENTS.md) — how future coding/writing work should use the references.
+6. [Sprite production standard](SPRITE_PRODUCTION.md) — framing, identity lock, naming, and QA for future character art.
+7. [Background production notes](BACKGROUND_PRODUCTION.md) — shared visual language and briefs for the eight environments.
+8. [Agent instructions](AGENTS.md) — how future coding/writing work should use the references.
 
 ## Game structure
 

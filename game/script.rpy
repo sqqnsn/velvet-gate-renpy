@@ -2,7 +2,7 @@
 # A standalone, text-first, seven-day Ren'Py game.
 # Continuity follows ../canon/; scenes written here are game-only interpretations.
 
-define vg_livia = Character("Livia", color="#c9b7ee")
+define vg_livia = Character("Livia", color="#c9b7ee", show_portrait="livia listening")
 define vg_claire = Character("Claire", color="#e4c4a3", show_portrait="claire listening")
 define vg_maddie = Character("Maddie", color="#efb5cf", show_portrait="maddie listening")
 define vg_sydney = Character("Sydney", color="#9cc9de")
@@ -26,6 +26,8 @@ define vg_speakers = {
 }
 
 define vg_finale_portraits = {
+    ("livia", "complete"): "livia fingertip_at_lip",
+    ("livia", "incomplete"): "livia hands_on_hips",
     ("claire", "complete"): "claire affectionate",
     ("claire", "incomplete"): "claire happy",
     ("maddie", "complete"): "maddie happy",
@@ -34,15 +36,16 @@ define vg_finale_portraits = {
     ("yara", "incomplete"): "yara knowing_challenge",
 }
 
-# Atmospheric placeholders for the room backgrounds.
-image vg atrium = Solid("#231c28")
-image vg study = Solid("#2c2533")
-image vg terrace = Solid("#302529")
-image vg garden = Solid("#19312d")
-image vg library = Solid("#26283b")
-image vg music = Solid("#322637")
-image vg chamber = Solid("#28262e")
-image vg evening = Solid("#141c2b")
+# Environment art leaves the center clear for portraits and the lower area
+# quiet enough for the dialogue window.
+image vg atrium = "images/backgrounds/vg_atrium.png"
+image vg study = "images/backgrounds/vg_study.png"
+image vg terrace = "images/backgrounds/vg_terrace.png"
+image vg garden = "images/backgrounds/vg_garden.png"
+image vg library = "images/backgrounds/vg_library.png"
+image vg music = "images/backgrounds/vg_music.png"
+image vg chamber = "images/backgrounds/vg_chamber.png"
+image vg evening = "images/backgrounds/vg_evening.png"
 
 # Only affinity is a numeric relationship metric. All other values record story facts.
 default vg_day = 1

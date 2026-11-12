@@ -77,5 +77,6 @@ The promotion and its scenes are specific to the demo. The cast profiles record 
 ## Verification and next editorial pass
 
 - The automated suite covers all fourteen romances, both promotion tiers, one-time Affinity awards, the unfinished ending swing, the completed ending priority, and call targets.
-- Ren'Py SDK lint and live seven-day playthrough are **still required** on a computer with the SDK installed.
-- Suggested editorial pass: adjust individual voices in play, refine pacing on the fifth visit, then add portraits, location art, UI polish, and sound after mechanics feel right.
+- Ren'Py 8.5.3 has compiled and launched the project successfully. A saved SDK lint report and documented full seven-day playthrough are still required before sharing a build.
+- All eight location backgrounds and the first four portrait sets are integrated. The next editorial pass is to adjust individual voices in play, refine pacing on the fifth visit, complete the remaining portrait sets when requested, and continue UI polish.
+- Audio and voice production are intentionally deferred.

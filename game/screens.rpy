@@ -100,7 +100,7 @@ screen say(who, what, portrait=None):
     if portrait is not None:
         $ portrait_tag = portrait.partition(" ")[0] if hasattr(portrait, "partition") else None
 
-        if portrait_tag in ("claire", "maddie", "yara"):
+        if portrait_tag in ("claire", "yara"):
             add portrait at vg_fullbody_dialogue_portrait
         else:
             add portrait at vg_dialogue_portrait

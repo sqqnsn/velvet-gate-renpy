@@ -106,8 +106,8 @@ label vg_promotion_decision:
 label vg_promotion_review:
     menu:
         "Hear what Livia has noticed." if not vg_heard_livia:
-            vg_livia "Saba knows when a room needs quiet. Domitia has learned to bring a correction privately. I would trust either of them with chamber work."
-            vg_livia "Among the Initiates, Samira takes particular care over the things people seldom see. Sylvie has been coming early to trim the atrium lamps."
+            vg_livia "Saba knows when a room needs quiet. Domitia has learned to bring a correction privately. I would trust either of them with chamber work." (show_portrait="livia explaining")
+            vg_livia "Among the Initiates, Samira takes particular care over the things people seldom see. Sylvie has been coming early to trim the atrium lamps." (show_portrait="livia explaining")
             $ vg_heard_livia = True
             jump vg_promotion_review
         "Hear what Claire has noticed." if not vg_heard_claire:
@@ -132,7 +132,7 @@ label vg_choose_promotion:
     $ vg_award_promotion(vg_nominee)
     $ vg_promotion_name = VG_NAMES[vg_promoted]
     "Livia marks your choice in her ledger. Claire makes a note of the morning arrangements."
-    vg_livia "I'll give [vg_promotion_name] your decision in private, Domine."
+    vg_livia "I'll give [vg_promotion_name] your decision in private, Domine." (show_portrait="livia listening")
     return
 
 label vg_promotion_morning:

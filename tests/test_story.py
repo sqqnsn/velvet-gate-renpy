@@ -6,6 +6,7 @@ a playthrough in Ren'Py itself.
 """
 
 import re
+import struct
 import textwrap
 import types
 import unittest
@@ -101,6 +102,34 @@ class VelvetGateLogicTests(unittest.TestCase):
         script = (GAME / "script.rpy").read_text(encoding="utf-8")
         selectable = set(re.findall(r'vg_current_key\s*=\s*"(\w+)"', script))
         self.assertEqual(set(self.ns["VG_ORDER"]), selectable)
+
+    def test_livia_has_portraits_for_every_personal_chapter_and_finale(self):
+        chapters = self.ns["VG_SCENES"]["livia"] + self.ns["VG_FOLLOWUPS"]["livia"]
+        for chapter in chapters:
+            self.assertTrue(chapter["portrait"], chapter["opening"])
+            self.assertTrue(chapter["choices"][0].get("portrait"), chapter["opening"])
+
+        script = (GAME / "script.rpy").read_text(encoding="utf-8")
+        self.assertIn('show_portrait="livia listening"', script)
+        self.assertIn('("livia", "complete"): "livia fingertip_at_lip"', script)
+        self.assertIn('("livia", "incomplete"): "livia hands_on_hips"', script)
+
+    def test_all_backgrounds_are_wired_and_1920_by_1080(self):
+        names = (
+            "atrium", "study", "terrace", "garden",
+            "library", "music", "chamber", "evening",
+        )
+        script = (GAME / "script.rpy").read_text(encoding="utf-8")
+
+        for name in names:
+            relative = f"images/backgrounds/vg_{name}.png"
+            self.assertIn(f'image vg {name} = "{relative}"', script)
+            path = GAME / relative
+            self.assertTrue(path.is_file(), relative)
+            with path.open("rb") as background:
+                header = background.read(24)
+            self.assertEqual(b"\x89PNG\r\n\x1a\n", header[:8], relative)
+            self.assertEqual((1920, 1080), struct.unpack(">II", header[16:24]), relative)
 
     def test_every_woman_can_reach_her_own_romantic_ending(self):
         for key in self.ns["VG_ORDER"]:
