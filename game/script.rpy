@@ -5,14 +5,14 @@
 define vg_livia = Character("Livia", color="#c9b7ee", show_portrait="livia listening")
 define vg_claire = Character("Claire", color="#e4c4a3", show_portrait="claire listening")
 define vg_maddie = Character("Maddie", color="#efb5cf", show_portrait="maddie listening")
-define vg_sydney = Character("Sydney", color="#9cc9de")
+define vg_sydney = Character("Sydney", color="#9cc9de", show_portrait="sydney listening")
 define vg_domitia = Character("Domitia", color="#e3ca9c")
 define vg_ione = Character("Ione", color="#dddce9")
 define vg_saba = Character("Saba", color="#d9b27b")
 define vg_yara = Character("Yara", color="#b3d3bd", show_portrait="yara listening")
 define vg_sylvie = Character("Sylvie", color="#baacd2")
 define vg_nisha = Character("Nisha", color="#e6b49a", show_portrait="nisha listening")
-define vg_valeria = Character("Valeria", color="#e6a4ad")
+define vg_valeria = Character("Valeria", color="#e6a4ad", show_portrait="valeria listening")
 define vg_mina = Character("Mina", color="#badcde")
 define vg_samira = Character("Samira", color="#c4bacb")
 define vg_safiya = Character("Safiya", color="#bfcca7")
@@ -32,10 +32,14 @@ define vg_finale_portraits = {
     ("claire", "incomplete"): "claire happy",
     ("maddie", "complete"): "maddie happy",
     ("maddie", "incomplete"): "maddie affectionate",
+    ("sydney", "complete"): "sydney affectionate",
+    ("sydney", "incomplete"): "sydney listening",
     ("yara", "complete"): "yara affectionate",
     ("yara", "incomplete"): "yara knowing_challenge",
     ("nisha", "complete"): "nisha affectionate",
     ("nisha", "incomplete"): "nisha happy",
+    ("valeria", "complete"): "valeria happy",
+    ("valeria", "incomplete"): "valeria affectionate",
 }
 
 # Environment art leaves the center clear for portraits and the lower area
@@ -129,7 +133,7 @@ label vg_morning:
     elif vg_day == 2:
         "DAY TWO — Familiar company"
         vg_maddie "I said I'd be ready early. Sydney says my version of early is decorative." (show_portrait="maddie happy")
-        vg_sydney "I said it with affection. Mostly."
+        vg_sydney "I said it with affection. Mostly." (show_portrait="sydney knowing_challenge")
     elif vg_day == 3:
         "DAY THREE — Things worth repeating"
         vg_yara "Nisha has suggested music with breakfast. I suggested we first survive breakfast." (show_portrait="yara unconvinced")

@@ -149,6 +149,11 @@ Before wiring a set into the game:
 1. Confirm every file is the expected pixel size and RGBA PNG.
 2. Inspect transparency at all four corners and around hair, fingers, and fabric.
 3. Compare the face, hair, costume, and apparent age with the approved master.
+   Inspect the hair at native resolution and dialogue size on light and dark
+   backgrounds. Check that the hairline follows the forehead and temples,
+   any visible part shows believable scalp, and the volume and strand
+   direction fit the head. Revise wig-like edges, floating locks, or repeated
+   strand patterns before delivery.
 4. Confirm consistent head size and vertical placement across all seven files.
 5. Compare the candidate and neutral master side by side in close crops at
    the same apparent face size. Start at native resolution so both irises,
