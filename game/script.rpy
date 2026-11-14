@@ -6,7 +6,7 @@ define vg_livia = Character("Livia", color="#c9b7ee", show_portrait="livia liste
 define vg_claire = Character("Claire", color="#e4c4a3", show_portrait="claire listening")
 define vg_maddie = Character("Maddie", color="#efb5cf", show_portrait="maddie listening")
 define vg_sydney = Character("Sydney", color="#9cc9de", show_portrait="sydney listening")
-define vg_domitia = Character("Domitia", color="#e3ca9c")
+define vg_domitia = Character("Domitia", color="#e3ca9c", show_portrait="domitia listening")
 define vg_ione = Character("Ione", color="#dddce9")
 define vg_saba = Character("Saba", color="#d9b27b")
 define vg_yara = Character("Yara", color="#b3d3bd", show_portrait="yara listening")
@@ -34,6 +34,8 @@ define vg_finale_portraits = {
     ("maddie", "incomplete"): "maddie affectionate",
     ("sydney", "complete"): "sydney affectionate",
     ("sydney", "incomplete"): "sydney listening",
+    ("domitia", "complete"): "domitia affectionate",
+    ("domitia", "incomplete"): "domitia held_look",
     ("yara", "complete"): "yara affectionate",
     ("yara", "incomplete"): "yara knowing_challenge",
     ("nisha", "complete"): "nisha affectionate",
