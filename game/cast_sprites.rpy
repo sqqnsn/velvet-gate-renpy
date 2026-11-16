@@ -67,3 +67,21 @@ image valeria knowing_challenge = "images/valeria/valeria_06_knowing_challenge_a
 image valeria happy = "images/valeria/valeria_09_happy.png"
 image valeria affectionate = "images/valeria/valeria_12_affectionate.png"
 image valeria holding_back = "images/valeria/valeria_holding_back.png"
+
+image ione concerned = "images/ione/ione_3a_concerned.png"
+image ione uneasy = "images/ione/ione_3b_uneasy.png"
+image ione amused = "images/ione/ione_05_amused.png"
+image ione shy_flirt = "images/ione/ione_a_shy_flirt.png"
+image ione teasing_flirt = "images/ione/ione_b_teasing_flirt.png"
+image ione quietly_bold = "images/ione/ione_c_quietly_bold.png"
+
+image mina listening = "images/mina/mina_01_listening_neutral.png"
+image mina explaining = "images/mina/mina_02_explaining_neutral_speaking.png"
+image mina considering = "images/mina/mina_03_considering_worried.png"
+image mina amused = "images/mina/mina_05_amused.png"
+image mina affectionate = "images/mina/mina_12_affectionate.png"
+image mina concerned = "images/mina/mina_concerned.png"
+image mina curious = "images/mina/mina_curious.png"
+image mina quiet_resolve = "images/mina/mina_quiet_resolve.png"
+
+image samira explaining = "images/samira/samira_02_explaining_neutral_speaking.png"
