@@ -38,7 +38,7 @@ init python:
             "recall": "When Livia told me you'd chosen me, I thought of all the little things I hoped you'd seen. I'm glad you did.",
         },
         "samira": {
-            "morning": "Samira has made the lamps easy to reach from your place. She waits just beyond their light, her clasp barely catching it as she comes forward.",
+            "morning": "Samira has made the lamps easy to reach from your place. She waits just beyond their light before coming forward.",
             "greeting": "The atrium is quietest at this hour, Domine. I'm glad to be the one who makes it ready.",
             "recall": "I have kept the moment Livia told me to myself. I wanted you to know that I treasure it.",
         },
@@ -138,7 +138,9 @@ label vg_choose_promotion:
 label vg_promotion_morning:
     if vg_promoted is None:
         return
-    if vg_promoted in VG_PROMOTION_TIERS[2]:
+    if vg_promoted == "samira":
+        "Your place at the morning audience is ready."
+    elif vg_promoted in VG_PROMOTION_TIERS[2]:
         "Your place at the morning audience is ready. The new House Servant comes forward with a plain clasp at her shoulder."
     else:
         scene vg chamber
@@ -149,5 +151,8 @@ label vg_promotion_morning:
     $ vg_speaker = vg_speakers[vg_promoted]
     "[vg_opening]"
     "You acknowledge her work and give her a moment to answer."
-    vg_speaker "[vg_line]"
+    if vg_promoted == "samira":
+        vg_speaker "[vg_line]" (show_portrait="samira promoted")
+    else:
+        vg_speaker "[vg_line]"
     return

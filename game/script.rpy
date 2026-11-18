@@ -8,14 +8,14 @@ define vg_maddie = Character("Maddie", color="#efb5cf", show_portrait="maddie li
 define vg_sydney = Character("Sydney", color="#9cc9de", show_portrait="sydney listening")
 define vg_domitia = Character("Domitia", color="#e3ca9c", show_portrait="domitia listening")
 define vg_ione = Character("Ione", color="#dddce9", show_portrait="ione quietly_bold")
-define vg_saba = Character("Saba", color="#d9b27b")
+define vg_saba = Character("Saba", color="#d9b27b", show_portrait="saba listening")
 define vg_yara = Character("Yara", color="#b3d3bd", show_portrait="yara listening")
-define vg_sylvie = Character("Sylvie", color="#baacd2")
+define vg_sylvie = Character("Sylvie", color="#baacd2", show_portrait="sylvie listening")
 define vg_nisha = Character("Nisha", color="#e6b49a", show_portrait="nisha listening")
 define vg_valeria = Character("Valeria", color="#e6a4ad", show_portrait="valeria listening")
 define vg_mina = Character("Mina", color="#badcde", show_portrait="mina listening")
 define vg_samira = Character("Samira", color="#c4bacb", show_portrait="samira explaining")
-define vg_safiya = Character("Safiya", color="#bfcca7")
+define vg_safiya = Character("Safiya", color="#bfcca7", show_portrait="safiya listening")
 
 define vg_speakers = {
     "livia": vg_livia, "claire": vg_claire, "maddie": vg_maddie,
@@ -28,6 +28,10 @@ define vg_speakers = {
 define vg_finale_portraits = {
     ("ione", "complete"): "ione quietly_bold",
     ("ione", "incomplete"): "ione shy_flirt",
+    ("saba", "complete"): "saba affectionate",
+    ("saba", "incomplete"): "saba listening",
+    ("safiya", "complete"): "safiya affectionate",
+    ("safiya", "incomplete"): "safiya considering",
     ("livia", "complete"): "livia fingertip_at_lip",
     ("livia", "incomplete"): "livia hands_on_hips",
     ("claire", "complete"): "claire affectionate",
@@ -40,14 +44,16 @@ define vg_finale_portraits = {
     ("domitia", "incomplete"): "domitia held_look",
     ("yara", "complete"): "yara affectionate",
     ("yara", "incomplete"): "yara knowing_challenge",
+    ("sylvie", "complete"): "sylvie affectionate",
+    ("sylvie", "incomplete"): "sylvie pensive",
     ("nisha", "complete"): "nisha affectionate",
     ("nisha", "incomplete"): "nisha happy",
     ("valeria", "complete"): "valeria happy",
     ("valeria", "incomplete"): "valeria affectionate",
     ("mina", "complete"): "mina quiet_resolve",
     ("mina", "incomplete"): "mina affectionate",
-    ("samira", "complete"): "samira explaining",
-    ("samira", "incomplete"): "samira explaining",
+    ("samira", "complete"): "samira affectionate",
+    ("samira", "incomplete"): "samira listening",
 }
 
 # Environment art leaves the center clear for portraits and the lower area
